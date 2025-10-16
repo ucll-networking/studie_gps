@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 2.0.24">
+<title>Computernetwerken Studie-GPS</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/*! Asciidoctor default stylesheet | MIT License | https://asciidoctor.org */
+/* Uncomment the following line when using as a custom stylesheet */
+/* @import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700"; */
+html{font-family:sans-serif;-webkit-text-size-adjust:100%}
+a{background:none}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+b,strong{font-weight:bold}
+abbr{font-size:.9em}
+abbr[title]{cursor:help;border-bottom:1px dotted #dddddf;text-decoration:none}
+dfn{font-style:italic}
+hr{height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+audio,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type=checkbox],input[type=radio]{padding:0}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,::before,::after{box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;line-height:1;position:relative;cursor:auto;-moz-tab-size:4;-o-tab-size:4;tab-size:4;word-wrap:anywhere;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:0}
+p{line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #dddddf;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.square{list-style-type:square}
+ul.circle ul:not([class]),ul.disc ul:not([class]),ul.square ul:not([class]){list-style:inherit}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:1px solid #dedede;word-wrap:normal}
+table thead,table tfoot{background:#f7f8f7}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt{background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{line-height:1.6}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.center{margin-left:auto;margin-right:auto}
+.stretch{width:100%}
+.clearfix::before,.clearfix::after,.float-group::before,.float-group::after{content:" ";display:table}
+.clearfix::after,.float-group::after{clear:both}
+:not(pre).nobreak{word-wrap:normal}
+:not(pre).nowrap{white-space:nowrap}
+:not(pre).pre-wrap{white-space:pre-wrap}
+:not(pre):not([class^=L])>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background:#f7f7f8;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre{color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;line-height:1.45;text-rendering:optimizeSpeed}
+pre code,pre pre{color:inherit;font-size:inherit;line-height:inherit}
+pre.nowrap,pre.nowrap pre{white-space:pre;word-wrap:normal}
+em em{font-style:normal}
+strong strong{font-weight:400}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background:#f7f7f7;border:1px solid #ccc;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2),inset 0 0 0 .1em #fff;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menuref{color:#000}
+.menuseq b:not(.caret),.menuref{font-weight:inherit}
+.menuseq{word-spacing:-.02em}
+.menuseq b.caret{font-size:1.25em;line-height:.8}
+.menuseq i.caret{font-weight:bold;text-align:center;width:.45em}
+b.button::before,b.button::after{position:relative;top:-1px;font-weight:400}
+b.button::before{content:"[";padding:0 3px 0 2px}
+b.button::after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin:0 auto;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header::before,#header::after,#content::before,#content::after,#footnotes::before,#footnotes::after,#footer::before,#footer::after{content:" ";display:table}
+#header::after,#content::after,#footnotes::after,#footer::after{clear:both}
+#content{margin-top:1.25em}
+#content::before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span::before{content:"\00a0\2013\00a0"}
+#header .details br+span.author::before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark::before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber::after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #dddddf;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #e7e7e9;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #e7e7e9;left:auto;right:0}}
+@media screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border:1px solid #e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:none;background:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:hsla(0,0%,100%,.8);line-height:1.44}
+#content{margin-bottom:.625em}
+.sect1{padding-bottom:.625em}
+@media screen and (min-width:768px){#content{margin-bottom:1.25em}
+.sect1{padding-bottom:1.25em}}
+.sect1:last-child{padding-bottom:0}
+.sect1+.sect1{border-top:1px solid #e7e7e9}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor::before,h2>a.anchor::before,h3>a.anchor::before,#toctitle>a.anchor::before,.sidebarblock>.content>.title>a.anchor::before,h4>a.anchor::before,h5>a.anchor::before,h6>a.anchor::before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+details,.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+details{margin-left:1.25rem}
+details>summary{cursor:pointer;display:block;position:relative;line-height:1.6;margin-bottom:.625rem;outline:none;-webkit-tap-highlight-color:transparent}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{content:"";border:solid transparent;border-left:solid;border-width:.3em 0 .3em .5em;position:absolute;top:.5em;left:-1.25rem;transform:translateX(15%)}
+details[open]>summary::before{border:solid transparent;border-top:solid;border-width:.5em .3em 0;transform:translateY(15%)}
+details>summary::after{content:"";width:1.25rem;height:1em;position:absolute;top:.3em;left:-1.25rem}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock.fit-content>caption.title{white-space:nowrap;width:0}
+.paragraph.lead>p,#preamble>.sectionbody>[class=paragraph]:first-of-type p{font-size:1.21875em;line-height:1.6;color:rgba(0,0,0,.85)}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #dddddf;color:rgba(0,0,0,.6);word-wrap:anywhere}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border:1px solid #e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;border-radius:4px}
+.sidebarblock{border:1px solid #dbdbd6;margin-bottom:1.25em;padding:1.25em;background:#f3f3f2;border-radius:4px}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:first-child,.sidebarblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child,.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock>.content>pre{border-radius:4px;overflow-x:auto;padding:1em;font-size:.8125em}
+@media screen and (min-width:768px){.literalblock pre,.listingblock>.content>pre{font-size:.90625em}}
+@media screen and (min-width:1280px){.literalblock pre,.listingblock>.content>pre{font-size:1em}}
+.literalblock pre,.listingblock>.content>pre:not(.highlight),.listingblock>.content>pre[class=highlight],.listingblock>.content>pre[class^="highlight "]{background:#f7f7f8}
+.literalblock.output pre{color:#f7f7f8;background:rgba(0,0,0,.9)}
+.listingblock>.content{position:relative}
+.listingblock pre>code{display:block}
+.listingblock code[data-lang]::before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:inherit;opacity:.5}
+.listingblock:hover code[data-lang]::before{display:block}
+.listingblock.terminal pre .command::before{content:attr(data-prompt);padding-right:.5em;color:inherit;opacity:.5}
+.listingblock.terminal pre .command:not([data-prompt])::before{content:"$"}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.prettyprint{background:#f7f7f8}
+pre.prettyprint .linenums{line-height:1.45;margin-left:2em}
+pre.prettyprint li{background:none;list-style-type:inherit;padding-left:0}
+pre.prettyprint li code[data-lang]::before{opacity:1}
+pre.prettyprint li:not(:first-child) code[data-lang]::before{display:none}
+table.linenotable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.linenotable td[class]{color:inherit;vertical-align:top;padding:0;line-height:inherit;white-space:normal}
+table.linenotable td.code{padding-left:.75em}
+table.linenotable td.linenos,pre.pygments .linenos{border-right:1px solid;opacity:.35;padding-right:.5em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+pre.pygments span.linenos{display:inline-block;margin-right:.75em}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock:not(.excerpt)>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote::before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.75em;margin-right:.5ex;text-align:right}
+.verseblock{margin:0 1em 1.25em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans-serif;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract blockquote::before,.quoteblock.excerpt blockquote::before,.quoteblock .quoteblock blockquote::before{display:none}
+.quoteblock.abstract blockquote,.quoteblock.abstract p,.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{line-height:1.6;word-spacing:0}
+.quoteblock.abstract{margin:0 1em 1.25em;display:block}
+.quoteblock.abstract>.title{margin:0 0 .375em;font-size:1.15em;text-align:center}
+.quoteblock.excerpt>blockquote,.quoteblock .quoteblock{padding:0 0 .25em 1em;border-left:.25em solid #dddddf}
+.quoteblock.excerpt,.quoteblock .quoteblock{margin-left:0}
+.quoteblock.excerpt blockquote,.quoteblock.excerpt p,.quoteblock .quoteblock blockquote,.quoteblock .quoteblock p{color:inherit;font-size:1.0625rem}
+.quoteblock.excerpt .attribution,.quoteblock .quoteblock .attribution{color:inherit;font-size:.85rem;text-align:left;margin-right:0}
+p.tableblock:last-child{margin-bottom:0}
+td.tableblock>.content{margin-bottom:1.25em;word-wrap:anywhere}
+td.tableblock>.content>:last-child{margin-bottom:-1.25em}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all>*>tr>*{border-width:1px}
+table.grid-cols>*>tr>*{border-width:0 1px}
+table.grid-rows>*>tr>*{border-width:1px 0}
+table.frame-all{border-width:1px}
+table.frame-ends{border-width:1px 0}
+table.frame-sides{border-width:0 1px}
+table.frame-none>colgroup+*>:first-child>*,table.frame-sides>colgroup+*>:first-child>*{border-top-width:0}
+table.frame-none>:last-child>:last-child>*,table.frame-sides>:last-child>:last-child>*{border-bottom-width:0}
+table.frame-none>*>tr>:first-child,table.frame-ends>*>tr>:first-child{border-left-width:0}
+table.frame-none>*>tr>:last-child,table.frame-ends>*>tr>:last-child{border-right-width:0}
+table.stripes-all>*>tr,table.stripes-odd>*>tr:nth-of-type(odd),table.stripes-even>*>tr:nth-of-type(even),table.stripes-hover>*>tr:hover{background:#f8f8f7}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.checklist,ul.none,ol.none,ul.no-bullet,ol.no-bullet,ol.unnumbered,ul.unstyled,ol.unstyled{list-style-type:none}
+ul.no-bullet,ol.no-bullet,ol.unnumbered{margin-left:.625em}
+ul.unstyled,ol.unstyled{margin-left:0}
+li>p:empty:only-child::before{content:"";display:inline-block}
+ul.checklist>li>p:first-child{margin-left:-1em}
+ul.checklist>li>p:first-child>.fa-square-o:first-child,ul.checklist>li>p:first-child>.fa-check-square-o:first-child{width:1.25em;font-size:.8em;position:relative;bottom:.125em}
+ul.checklist>li>p:first-child>input[type=checkbox]:first-child{margin-right:.25em}
+ul.inline{display:flex;flex-flow:row wrap;list-style:none;margin:0 0 .625em -1.25em}
+ul.inline>li{margin-left:1.25em}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+td.hdlist2{word-wrap:anywhere}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist td:not([class]):first-child{padding:.4em .75em 0;line-height:1;vertical-align:top}
+.colist td:not([class]):first-child img{max-width:none}
+.colist td:not([class]):last-child{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:4px solid #fff;box-shadow:0 0 0 1px #ddd}
+.imageblock.left{margin:.25em .625em 1.25em 0}
+.imageblock.right{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none;margin-left:-1.05em}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background:#00fafa}
+.black{color:#000}
+.black-background{background:#000}
+.blue{color:#0000bf}
+.blue-background{background:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background:#fa00fa}
+.gray{color:#606060}
+.gray-background{background:#7d7d7d}
+.green{color:#006000}
+.green-background{background:#007d00}
+.lime{color:#00bf00}
+.lime-background{background:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background:#7d0000}
+.navy{color:#000060}
+.navy-background{background:#00007d}
+.olive{color:#606000}
+.olive-background{background:#7d7d00}
+.purple{color:#600060}
+.purple-background{background:#7d007d}
+.red{color:#bf0000}
+.red-background{background:#fa0000}
+.silver{color:#909090}
+.silver-background{background:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background:#fafa00}
+span.icon>.fa{cursor:default}
+a span.icon>.fa{cursor:inherit}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note::before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip::before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning::before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution::before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important::before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background:rgba(0,0,0,.8);border-radius:50%;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]::after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt,summary{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,td.hdlist1,span.alt,summary{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background:#fffef7;border-color:#e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@page{margin:1.25cm .75cm}
+@media print{*{box-shadow:none!important;text-shadow:none!important}
+html{font-size:80%}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare)::after,a[href^="https:"]:not(.bare)::after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]{border-bottom:1px dotted}
+abbr[title]::after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#header,#content,#footnotes,#footer{max-width:none}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #dddddf!important;padding-bottom:0!important}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span::before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]::before{display:block}
+#footer{padding:0 .9375em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+@media amzn-kf8,print{#header>h1:first-child{margin-top:1.25rem}
+.sect1{padding:0!important}
+.sect1+.sect1{border:0}
+#footer{background:none}
+#footer-text{color:rgba(0,0,0,.6);font-size:.9em}}
+@media amzn-kf8{#header,#content,#footnotes,#footer{padding:0}}
+</style>
+</head>
+<body class="article">
+<div id="header">
+<h1>Computernetwerken Studie-GPS</h1>
+<div id="toc" class="toc">
+<div id="toctitle">Inhoud</div>
+<ul class="sectlevel1">
+<li><a href="#_inleiding">1. Inleiding</a>
+<ul class="sectlevel2">
+<li><a href="#_doel">1.1. Doel</a></li>
+<li><a href="#_indeling">1.2. Indeling</a></li>
+<li><a href="#_methode">1.3. Methode</a></li>
+<li><a href="#_oproep_voor_feedback">1.4. Oproep voor feedback</a></li>
+<li><a href="#_tip">1.5. Tip</a></li>
+</ul>
+</li>
+<li><a href="#_deel_1_je_netwerk_thuis_begrijpen">2. Deel 1: Je netwerk thuis begrijpen</a>
+<ul class="sectlevel2">
+<li><a href="#_voorbereiding_packet_tracerwireshark">2.1. Voorbereiding (Packet Tracer/Wireshark)</a></li>
+<li><a href="#_eén_ipv4_netwerk">2.2. Eén IPv4-netwerk</a></li>
+<li><a href="#_ipv4_adressen">2.3. IPv4-adressen</a></li>
+<li><a href="#_twee_ipv4_netwerken_één_router">2.4. Twee IPv4-netwerken / één router</a></li>
+<li><a href="#_drie_of_meer_ipv4_netwerken_statische_routering">2.5. Drie (of meer) IPv4-netwerken / statische routering</a></li>
+<li><a href="#_osi_model_intro_l1_l3">2.6. OSI model intro (L1-L3)</a></li>
+<li><a href="#_arp_en_icmp_pt_simulatie">2.7. ARP en ICMP, PT simulatie</a></li>
+<li><a href="#_ethernet_switching_life_of_a_packet">2.8. Ethernet switching / life of a packet</a></li>
+<li><a href="#_ipv4_subnetting">2.9. IPv4 subnetting</a></li>
+<li><a href="#_ipv6">2.10. IPv6</a></li>
+<li><a href="#_osi_vervolg_tcpudp_client_server_dns">2.11. OSI vervolg, TCP/UDP, client-server, DNS, &#8230;&#8203;</a></li>
+<li><a href="#_ipv4_dynamische_adressering_dhcp">2.12. IPv4 dynamische adressering (DHCP)</a></li>
+<li><a href="#_ipv6_dynamische_adressering">2.13. IPv6 dynamische adressering</a></li>
+<li><a href="#_nat_ipv4">2.14. NAT (IPv4)</a></li>
+<li><a href="#_je_eigen_thuisnetwerk_begrijpen">2.15. je eigen thuisnetwerk begrijpen</a></li>
+</ul>
+</li>
+<li><a href="#_deel_2_technologieën_in_een_bedrijfsnetwerk">3. Deel 2: technologieën in een bedrijfsnetwerk</a>
+<ul class="sectlevel2">
+<li><a href="#_svi_en_loopback">3.1. SVI en loopback</a></li>
+<li><a href="#_paswoorden_ssh">3.2. paswoorden / SSH</a></li>
+<li><a href="#_vlans">3.3. VLAN&#8217;s</a></li>
+<li><a href="#_multi_layer_switches_mls">3.4. multi-layer switches (MLS)</a></li>
+<li><a href="#_ospf_v2">3.5. OSPF (v2)</a></li>
+<li><a href="#_stp">3.6. STP</a></li>
+<li><a href="#_linkaggregatie_etherchannel">3.7. Linkaggregatie (Etherchannel)</a></li>
+<li><a href="#_access_control_lists">3.8. Access control lists</a></li>
+<li><a href="#_design_integratie_redundantie">3.9. Design &amp; Integratie, redundantie</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="_inleiding">1. Inleiding</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_doel">1.1. Doel</h3>
+<div class="paragraph">
+<p>Deze studie-GPS heeft als doel:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Een alternatieve volgorde aanbieden om de leerstof te
+studeren/herhalen (andere volgorde dan Jeremy&#8217;s IT Labs, andere     volgorde dan Cisco NetAcad CCNA)</p>
+</li>
+<li>
+<p>Checklists om je te helpen nagaan of je klaar bent met een onderdeel</p>
+</li>
+<li>
+<p>Toelichten hoe gedetailleerd je een onderwerp moet kennen</p>
+</li>
+<li>
+<p>Extra aandacht geven aan foutopsporing</p>
+</li>
+<li>
+<p>Je aanmoedigen om soms bewust iets verkeerd te configureren en dan
+na te gaan of het effectief misloopt waar jij het verwacht</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_indeling">1.2. Indeling</h3>
+<div class="paragraph">
+<p>Deze studie-GPS is ingedeeld in twee delen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Eerst leer je voldoende om de werking van een typisch thuisnetwerk
+te begrijpen</p>
+</li>
+<li>
+<p>Daarna leer je netwerktechnologie die je meestal niet in een
+thuisnetwerk tegenkomt, maar wel in het netwerk van een school of een bedrijf</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In deze cursus behandelen we geen draadloze netwerken. Hoewel draadloze netwerken overal voorkomen, blijft alles wat we leren relevant, ook voor netwerken met draadloze eindapparatuur.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_methode">1.3. Methode</h3>
+<div class="paragraph">
+<p>Deze studie-GPS geeft vooral een volgorde, en helpt jezelf te evalueren.
+Je moet wel zelf actief op zoek gaan in het cursusmateriaal om elk
+onderwerp goed te beheersen. Aan het einde van elke stap staat een
+lijstje van verwachte kennis en vaardigheden die je zou moeten bereiken
+in die stap.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_oproep_voor_feedback">1.4. Oproep voor feedback</h3>
+<div class="paragraph">
+<p>Deze studie-GPS is recent en nog in opbouw. Feedback over het nut ervan
+is zeer welkom. Vind je deze alternatieve volgorde nuttig, of geef je
+toch de voorkeur aan NetAcad of Jeremy&#8217;s IT Labs? Wat vind je er goed
+aan? Wat vind je niet goed? Staan er fouten in? Ontbreekt er een stuk?
+Feedback is welkom bij je coach voor Computer Networks.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_tip">1.5. Tip</h3>
+<div class="paragraph">
+<p>Bewaar al je Packet Tracer oefeningen, vooral de oefeningen waar je zelf
+van een leeg blad begint te tekenen.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deel_1_je_netwerk_thuis_begrijpen">2. Deel 1: Je netwerk thuis begrijpen</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_voorbereiding_packet_tracerwireshark">2.1. Voorbereiding (Packet Tracer/Wireshark)</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>zorg dat je toegang hebt tot Cisco NetAcad (zie Toledo)</p>
+</li>
+<li>
+<p>installeer Cisco Packet Tracer op je computer (zie Toledo)</p>
+</li>
+<li>
+<p>installeer Wireshark op je computer (zie Toledo)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Zorg nu dat je in Packet Tracer een paar basisvaardigheden opdoet, als
+eerste kennismaking. Wat hierbij kan helpen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Jeremy&#8217;s "Packet Tracer Introduction | Day 1 Lab"
+(<a href="https://www.youtube.com/watch?v=a1Im6GYaSno" target="_blank" rel="noopener">https://www.youtube.com/watch?v=a1Im6GYaSno</a>)</p>
+</li>
+<li>
+<p>NetAcad CCNA-1 submodule 2.3.7 Packet Tracer - Navigate the IOS</p>
+</li>
+<li>
+<p>experimenteer zelf wat, teken eens een netwerk vertrekkende van een
+leeg blad in Packet Tracer, kijk wat rond in Packet Tracer</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Zorg daarna dat je in Wireshark een "capture" kan doen van het
+netwerkverkeer op je computer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>open wireshark, en selecteer de interface waarmee je op het internet
+geconnecteerd bent</p>
+</li>
+<li>
+<p>laat een aantal pakketten binnenkomen in Wireshark, en stop dan
+(rode stopknop)</p>
+</li>
+<li>
+<p>je klikt op een paar pakketten, en je kijkt alvast eens naar de
+informatie die je erin vindt; zie je ergens TCP (Transmission Control
+Protocol) staan? zie je andere protocolnamen?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Als laatste zoek je uit hoe je het IPv4-adres van je computer kan
+terugvinden via CLI, en je probeert dit uit. Hieronder alvast de
+commando&#8217;s die je waarschijnlijk nodig hebt:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Windows: $ ipconfig</p>
+</li>
+<li>
+<p>Mac Terminal: $ ifconfig</p>
+</li>
+<li>
+<p>Linux terminal: $ ip address</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>in Packet Tracer:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>in een lege Packet Tracer een aantal switches, routers en PC&#8217;s
+tekenen en verbinden (met automatische connectie-kabel), en ook
+terug verwijderen ; ook al begrijp je nog niet wat deze
+apparaten doen, je zou wel een gegeven topologie kunnen nabouwen
+in Packet Tracer (doe dit eventueel eens; neem een
+voorbeeldexamen en bouw het na)</p>
+</li>
+<li>
+<p>"options/preferences" gebruiken om de labels van interfaces of
+apparaatnamen aan- en uit te zetten</p>
+</li>
+<li>
+<p>bestanden (.pkt) opslaan en opnieuw openen</p>
+</li>
+<li>
+<p>labobestanden van Jeremy&#8217;s IT Lab en Cisco NetAcad openen</p>
+</li>
+<li>
+<p>de CLI (command line interface) van een switch en router openen
+om toegang te krijgen tot IOS</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>in Cisco IOS:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>ken je een aantal verschillende modes, en herken je hun
+verschillende prompts (o.a. privileged exec mode, global config
+mode)</p>
+</li>
+<li>
+<p>je begrijpt dat verschillende modes toegang geven tot
+verschillende commando&#8217;s</p>
+</li>
+<li>
+<p>je kent de CLI hulpmiddelen ? en TAB om mogelijke commando&#8217;s te
+zien of aan te vullen</p>
+</li>
+<li>
+<p>je kent de commando&#8217;s "enable", "configure terminal", en
+"exit" om tussen de modes te navigeren in IOS</p>
+</li>
+<li>
+<p>je weet dat je commando&#8217;s kunt afkorten als de afkorting
+eenduidig is (bijvoorbeeld \# conf t), en je kan zo typwerk besparen</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>in wireshark:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan een dump maken van het netwerkverkeer op je
+computer/laptop</p>
+</li>
+<li>
+<p>zie je de verschillende pakketjes (lijn per lijn), met een
+timestamp, en kan je de details van elk pakketje bekijken</p>
+</li>
+<li>
+<p>je weet dat de informatie in de pakketjes digitaal wordt
+voorgesteld, dus ook de nuttige inhoud (video, document, ...)
+is digitaal</p>
+</li>
+<li>
+<p>je kent de term "packet switched network", en hebt deze
+"packets" in wireshark gezien</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>op je computer:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat er meestal meerdere netwerkinterfaces op je computer
+zijn</p>
+</li>
+<li>
+<p>je begrijpt dat elke netwerkinterface zijn eigen IP-adres heeft
+(of meerdere per interface)</p>
+</li>
+<li>
+<p>zonder de details te begrijpen, weet je dat IPv6 een recentere
+variant is van het IP protocol dan IPv4, en dat momenteel heel
+veel netwerken beide versies tegelijk ondersteunen</p>
+</li>
+<li>
+<p>je weet welke netwerk interface op jouw computer diegene is
+waarlangs je met het Internet communiceert</p>
+</li>
+<li>
+<p>je weet via welk IPv4-adres je met het internet communiceert</p>
+</li>
+<li>
+<p>je vindt ook het IPv6-adres terug van deze netwerkinterface (als
+je dat hebt)</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_eén_ipv4_netwerk">2.2. Eén IPv4-netwerk</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>Packet Tracer bouwen/configureren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan in Packet Tracer een netwerk bouwen met switches, ethernet
+kabels, en "end devices" (PC / laptop / server) ; bijvoorbeeld zoals
+in de schermafbeelding hieronder, maar je kan dit voor eender welke
+combinatie van switches en eindapparaten</p>
+</li>
+<li>
+<p>je kan in zo&#8217;n netwerk het IPv4-adres configureren van alle end
+devices (bijvoorbeeld adressen 192.168.10.1, 192.168.10.2, ... met masker
+255.255.255.0)</p>
+</li>
+<li>
+<p>je herkent de prefixen Eth/Fa/Gi voor benamingen van interfaces in
+Cisco apparatuur, en kent hun maximale bitrates</p>
+</li>
+<li>
+<p>je weet dat er straight-through en crossover kabels bestaan, ook in
+Packet Tracer simulatie; je weet dat dit in moderne apparatuur
+automatisch wordt gedetecteerd en geen belangrijke rol meer speelt
+in de praktijk</p>
+</li>
+<li>
+<p>je weet misschien nog niet hoe een switch juist werkt, maar je merkt
+al dat je een switch niet hoeft te configureren om hem in je netwerk
+te laten werken</p>
+</li>
+<li>
+<p>je kan in een switch CLI de interface status bekijken (connected of
+niet); hangt er een kabel aan een interface of niet?</p>
+</li>
+<li>
+<p>je kan in een switch CLI een interface in shutdown zetten, en terug
+aanzetten</p>
+</li>
+<li>
+<p>je kan in een switch CLI met een interface range ineens meerdere
+interfaces in shutdown zetten</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Packet Tracer ping:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan vanop elk type eindapparaat (laptop, computer, server) een
+ping verzenden via de computer CLI (hint: Desktop / Command prompt)</p>
+</li>
+<li>
+<p>je kan aantonen of end devices elkaar al dan niet kunnen <strong>pingen</strong>
+; dus je herkent een geslaagde ping versus een gefaalde ping</p>
+</li>
+<li>
+<p>je hebt al eens bewust een switch interface in shutdown gezet, en
+dan gezien dat het apparaat achter die interface niet meer
+bereikbaar is</p>
+</li>
+<li>
+<p>je hebt al eens bewust een ping laten falen door een eindapparaat
+met een compleet ander IPv4-adres te configureren (bijvoorbeeld 10.10.10.10
+met mask 255.255.0.0 terwijl alle andere apparaten 192.168.10.x als
+IP-adres hebben)</p>
+</li>
+<li>
+<p>je begrijpt dat een IPv4-adres uniek moet zijn binnen het netwerk,
+dus als er twee eindapparaten hetzelfde IPv4-adres hebben, dan gaat
+het ergens mis (probeer dit gerust eens; wat gebeurt er? misschien
+begrijpt je verder in de cursus pas wat er exact misloopt...)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kennis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je (her)kent een UTP Ethernet kabel (copper in Packet Tracer)</p>
+</li>
+<li>
+<p>je weet dat Ethernet gestandaardiseerd is (en dus kabels en
+apparaten van verschillende merken moeten samenwerken), je kent de
+typische bitrates voor Ethernet</p>
+</li>
+<li>
+<p>je begrijpt de begrippen half duplex/full duplex</p>
+</li>
+<li>
+<p>je weet dat ethernet autonegotiatie bestaat voor speed/duplex</p>
+</li>
+<li>
+<p>je weet dat er ook glasvezelkabels bestaan, eveneens binnen de
+Ethernet standaard(en)</p>
+</li>
+<li>
+<p>je weet dat vanaf een bepaalde lengte van een kabel, de verbinding
+niet goed meer werkt, dus dat het juiste type kabel gekozen moet
+worden afhankelijk van de toepassing</p>
+</li>
+<li>
+<p>je weet dat computernetwerken werken met data pakketjes: per keer
+wordt een bepaalde hoeveelheid informatie doorgestuurd, in kleine
+pakketjes</p>
+</li>
+<li>
+<p>je weet in grote lijnen hoe een IPv4-adres eruit ziet, en dat daar
+voor een end device ook een netwerkmasker (Engels "subnet mask") bij
+hoort</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Eigen computer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan met je eigen computer pingen naar een apparaat op het
+internet aan de hand van het IP-adres (bijvoorbeeld ping 8.8.8.8)</p>
+</li>
+<li>
+<p>je kan met je eigen computer pingen naar een server op basis van de
+naam in plaats van het IP-adres (bijvoorbeeld ping www.ucll.be) ; zie je dat deze naam wordt
+omgezet in een IP-adres? is het een IPv4-adres of ziet het er
+helemaal anders uit, en is het misschien eerder een IPv6-adres?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wat je niet moet kennen/kunnen voor deze stap:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>het manueel instellen van speed/duplex op ethernet interfaces van
+netwerkapparaten (gewoon weten dat het kan/bestaat, maar automatisch
+gebeurt in moderne apparaten)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Hier nog een voorbeeld van een computernetwerk dat je in deze stap kan bouwen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/studie_gps_fig_switched_network.png" alt="studie gps fig switched network">
+</div>
+<div class="title">Figuur 1. Voorbeeldnetwerk om in deze stap te bouwen</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ipv4_adressen">2.3. IPv4-adressen</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>Talstelsels:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kent binaire/decimale/hexadecimale voorstellingen van getallen,
+en kan omzettingen doen ; dat mag met een rekenmachine, maar je hebt
+ook het inzicht om dat desnoods met de hand te kunnen</p>
+</li>
+<li>
+<p>je kan een logisch EN ("and") berekenen op binaire getallen, een ook
+op decimale en hexadecimale getallen; dat mag met een rekenmachine,
+maar je hebt ook het inzicht om dat desnoods met de hand te kunnen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>IPv4-adressen, basis</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kent/herkent een geldig IPv4-adres in de "dotted decimal"
+notatie, je weet dat het 32 bits lang is, dat er dus 8 bits zijn per
+decimaal getal</p>
+</li>
+<li>
+<p>je weet dat een IPv4-adres een netwerkdeel en een hostdeel heeft</p>
+</li>
+<li>
+<p>je kent volgende twee manieren om het netwerkdeel van een IPv4-adres
+aan te geven: netwerkmasker notatie (bijvoorbeeld 255.0.0.0), en de "slash"
+notatie (bijvoorbeeld /8)</p>
+</li>
+<li>
+<p>je kan een netwerkmasker converteren in een slash notatie en
+omgekeerd</p>
+</li>
+<li>
+<p>je begrijpt dat er twee speciale adressen zijn, niet geschikt voor
+het adres van een host: IPv4 <strong>broadcastadres</strong> en IPv4
+<strong>netwerkadres</strong>, en je kan beide adressen afleiden uit een gegeven
+hostadres; je kent goed het onderscheid tussen een <strong>hostadres</strong> en
+een netwerkadres</p>
+</li>
+<li>
+<p>je kent de betekenis van een "broadcast"</p>
+</li>
+<li>
+<p>je kan nagaan of twee IPv4-adressen (met gegeven netwerkmasker) in
+hetzelfde netwerk zitten of niet</p>
+</li>
+<li>
+<p>je kan voor een gegeven IPv4-netwerk uitrekenen hoeveel geldige hostadressen
+erin zitten (en je kan ze desnoods allemaal oplijsten)</p>
+</li>
+<li>
+<p>je kan zelf meerdere IPv4-netwerken bedenken die geen overlap hebben</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>IPv4-adressen, types</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kent/herkent het verschil tussen publieke en "private" IPv4-adressen, je herkent 192.168.x.y als private, en ook 10.x.y.z ; je
+weet dat er nog andere private ranges of speciale adressen bestaan,
+en kan ze opzoeken</p>
+</li>
+<li>
+<p>je weet dat op het Internet private adressen niet gebruikt worden
+(alleen publieke adressen), en dat private adressen ook niet
+gerouteerd worden op het Internet</p>
+</li>
+<li>
+<p>je weet dat in bedrijven of thuisnetwerken meestal private
+IPv4-adressen gebruikt worden (ook al begrijp je misschien nog niet
+hoe apparaten met een private adres, zoals jouw eigen PC, kunnen
+communiceren met apparaten op het Internet; dat komt nog)</p>
+</li>
+<li>
+<p>je weet dat er behalve IPv4 unicast en broadcast, ook nog multicast
+bestaat, en snapt in grote lijnen waarvoor dit dient</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Packet Tracer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan in Packet Tracer aantonen dat een PC met IPv4 192.168.10.1/24
+en een PC met IPv4 192.168.11.1/24 niet met elkaar kunnen
+communiceren als er alleen switches en kabels gebruikt worden; en je
+snapt dat dit is omdat ze niet in hetzelfde IPv4-netwerk zitten</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Eigen computer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan het IPv4-adres van je eigen laptop vinden</p>
+</li>
+<li>
+<p>je kan het IPv4-adres van een http(s) server op het internet vinden</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_twee_ipv4_netwerken_één_router">2.4. Twee IPv4-netwerken / één router</h3>
+<div class="paragraph">
+<p>Vorige stap: we lieten eindapparaten met elkaar communiceren via IPv4,
+maar dat werkte alleen als deze apparaten in hetzelfde IPv4-netwerk
+zaten. In deze stap zien we hoe apparaten in verschillende IPv4
+netwerken met elkaar kunnen communiceren door een router toe te voegen.</p>
+</div>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>Packet Tracer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan twee netwerken zoals gezien/geoefend in de vorige stap aan
+elkaar koppelen met 1 router</p>
+</li>
+<li>
+<p>je kan een IPv4 (host)adres toekennen aan een router interface</p>
+</li>
+<li>
+<p>je ondervindt dat router interfaces zonder configuratie in shutdown
+staan, en je ze dus expliciet moet aanzetten (in tegenstelling tot
+switch interfaces)</p>
+</li>
+<li>
+<p>je begrijpt dat de <strong>default gateway</strong> instelling in een
+eindapparaat nodig is vooraleer die buiten zijn eigen netwerk
+(m.a.w. voorbij de router) kan communiceren</p>
+</li>
+<li>
+<p>je kan nu twee willekeurige netwerken met 1 router ertussen
+configureren zodanig dat alle apparaten elkaar kunnen pingen (router
+configureren en eindapparaten configureren)</p>
+</li>
+<li>
+<p>je begrijpt dat je de router interface een willekeurig IPv4-adres in
+je netwerk kan geven, zolang die maar overeenkomt met de default
+gateway instellingen</p>
+</li>
+<li>
+<p>je begrijpt dat routers net als eindapparaten gebruik maken van
+hostadressen (dus geen netwerkadres of zo)</p>
+</li>
+<li>
+<p>je kan de IP configuratie van de interfaces van een Cisco router
+opvragen via de CLI</p>
+</li>
+<li>
+<p>je kan Packet Tracer configuraties met 1 router en meerdere IPv4
+netwerken troubleshooten</p>
+</li>
+<li>
+<p>je kan via IOS CLI de <strong>routing tabel</strong> van een Cisco router laten
+zien</p>
+</li>
+<li>
+<p>je hebt eens geprobeerd om twee interfaces van een router een IP
+adres te geven binnen hetzelfde netwerk, en je ziet dat Cisco IOS
+dit niet aanvaardt</p>
+</li>
+<li>
+<p>je kan foutopsporing doen in configuraties met 1 router (PC
+configuratie, router interface configuratie)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kennis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat een router verschillende netwerken verbindt met elkaar</p>
+</li>
+<li>
+<p>je weet dat een router interface&#8201;&#8212;&#8201;net als een PC of een server&#8201;&#8212;&#8201;een IP-adres heeft</p>
+</li>
+<li>
+<p>je weet dat de netwerken van de eigen interfaces automatisch in de
+routing tabel worden toegevoegd, je hoeft deze routes niet zelf in
+de routing tabel toe te voegen</p>
+</li>
+<li>
+<p>je begrijpt dat wij zelf moeten zorgen dat alle router interfaces en
+eindapparaten achter deze router interface een IPv4-adres hebben dat
+binnen hetzelfde netwerk ligt, en de router zelf de scheiding is
+tussen verschillende netwerken</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wat we nog niet kunnen nu:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je probeert ook eens drie netwerken aan elkaar te koppelen met 2
+routers, zoals in onderstaande figuur; de PC&#8217;s aan de uiteinden
+kunnen niet zomaar met elkaar communiceren; weet je waarom niet?
+misschien vind je het antwoord als je goed kijkt naar de routing
+tabellen; we gaan dit leren in de volgende stap</p>
+</li>
+<li>
+<p>misschien vroeg je je af: hoe kan een PC een pakket sturen naar een
+default gateway, met name een router in het eigen netwerk, terwijl
+de bestemming (destination IP) in de ping toch dat van de finale
+bestemming is? Dit gaan we later zien.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/studie_gps_fig_twee_routers.png" alt="studie gps fig twee routers">
+</div>
+<div class="title">Figuur 2. Drie netwerken, twee routers: werkt (nog) niet na deze stap</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_drie_of_meer_ipv4_netwerken_statische_routering">2.5. Drie (of meer) IPv4-netwerken / statische routering</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>Packet Tracer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan statische routes toevoegen aan een routing tabel van een
+router</p>
+</li>
+<li>
+<p>hiermee kan je dus voorgaande figuur met drie netwerken en twee
+routers configureren zodanig dat alle hosts elkaar kunnen pingen</p>
+</li>
+<li>
+<p>je kan statische routering troubleshooten</p>
+</li>
+<li>
+<p>je kan nu willekeurig grote computernetwerken bouwen met vele
+routers en switches, en zorgen dat iedereen met iedereen kan
+communiceren door statische routes toe te voegen</p>
+</li>
+<li>
+<p>je kan een IPv4 default route toevoegen aan een Cisco router</p>
+</li>
+<li>
+<p>je weet dat Cisco switches en routers soms <strong>uitbreidingsslots</strong>
+hebben, en je kan in Packet Tracer extra interfaces toevoegen aan
+een switch of router; op die manier kan je extra Ethernet interfaces
+toevoegen, voor zowel copper of fiber, zowel SFP als andere</p>
+</li>
+<li>
+<p>je kan in Packet Tracer Cisco netwerkapparaten verbinden met andere
+types kabel dan Ethernet koper, zoals <strong>seriële kabels</strong> en
+<strong>glasvezelkabels</strong></p>
+</li>
+<li>
+<p>je kan nu ook een configuratie bouwen in Packet Tracer met 1 router
+en 3 of 4 netwerken aan die ene router (gebruik bijvoorbeeld router PT-empty
+in Packet Tracer, en de uitbreidingsslots)</p>
+</li>
+<li>
+<p>je kan het IPv4-adres van router interfaces pingen vanaf
+eindapparaten, en je begrijpt dat je op deze manier ook kan nagaan
+tot waar in het netwerk de routering werkt of vanaf waar routering
+niet meer werkt</p>
+</li>
+<li>
+<p>je kan ook een ping versturen vanaf een router CLI naar eender welk
+ander IP-adres</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kennis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je begrijpt hoe een router functioneert aan de hand van destination
+IP en de actieve routing tabel; dat wil zeggen dat je zelf kan
+voorspellen wat een router met een pakketjes zal doen als je routing
+tabel en destination IP gegeven hebt</p>
+</li>
+<li>
+<p>je kent het concept "<strong>default route</strong>", je snapt waarvoor dit
+gebruikt wordt</p>
+</li>
+<li>
+<p>je kan vlot in een groot computernetwerk tellen hoeveel IP-netwerken
+er zijn</p>
+</li>
+<li>
+<p>je weet dat ook een rechtstreekse link tussen twee routers een apart
+IP-netwerk is, en je begrijpt ondertussen waarom dit vaak een /30
+netwerk is</p>
+</li>
+<li>
+<p>je weet dat er nog andere types netwerkinterfaces en -kabels bestaan
+dan de veelgebruikte Ethernet UTP koperparen met RJ45 stekker, zoals
+een STP kabel, een seriële verbinding, een glasvezelkabel (fiber)</p>
+</li>
+<li>
+<p>je weet dat er soorten glasvezelverbindingen zijn, o.a. single mode
+en multimode</p>
+</li>
+<li>
+<p>je weet dat er SFP (small form-factor pluggable) modules bestaan om
+extra interfaces toe te voegen</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_osi_model_intro_l1_l3">2.6. OSI model intro (L1-L3)</h3>
+<div class="paragraph">
+<p>Vorige stappen: we hebben computernetwerken gebouwd met meerdere
+switches en routers, en we kunnen dankzij statische routering al grote
+bedrijfsnetwerken bouwen die met IPv4 kunnen communiceren. In deze en
+volgende stappen gaan we dieper in hoe dit onderliggend werkt.</p>
+</div>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat de IPv4 pakketjes (bijvoorbeeld de ping pakketjes die je
+tot nu toe stuurde over het netwerk) verpakt worden in een "datalink
+frame" (ook encapsulatie genoemd, en het terug uitpakken aan de
+ontvanger decapsulatie)</p>
+</li>
+<li>
+<p>je weet dat dit verpakken/uitpakken van pakketten eigen is aan een
+gelaagd netwerkmodel; je snapt dat een voordeel van zo&#8217;n model is
+dat elke laag zijn eigen verantwoordelijkheid heeft die relatief
+losstaat van de verantwoordelijkheden van de andere lagen</p>
+</li>
+<li>
+<p>je weet dat de netwerklaag in dit model laag 3 (L3) wordt genoemd,
+en de laag eronder (datalink laag) laag 2 (L2) wordt genoemd</p>
+</li>
+<li>
+<p>je weet dat L2 in ethernet ook adressen heeft, en dat deze MAC
+adressen worden genoemd</p>
+</li>
+<li>
+<p>je weet dat de onderste laag (laag 1) de fysieke laag is, en dat we
+al verschillende protocollen zijn tegengekomen voor die L1: Ethernet
+met (elektrische) koperpaar-kabels, Ethernet met (licht-gebaseerde)
+glasvezelkabels, (elektrische) seriële verbindingen (de rode links
+in Packet Tracer).</p>
+</li>
+<li>
+<p>je weet dat de Ethernet standaard eigenlijk zowel L1 als L2
+beschrijft, en dat Ethernet L2 hetzelfde is voor koperkabels als
+voor glasvezelkabels</p>
+</li>
+<li>
+<p>je begrijpt dat MAC-adressen nodig zijn omdat ethernet een broadcast
+standaard is; broadcast wil eigenlijk zeggen dat er ook 3 of meer
+apparaten (3, 4, ...) op eenzelfde kabel kunnen aangesloten worden
+(beschouw een switch hier gerust als een kabel-knooppunt dat gewoon
+kabels doorverbindt, later nog meer over de werking van switches);
+dus de MAC-adressen laten toe om data voor een bepaalde bestemming
+te addresseren terwijl er vele bestemmingen het elektrische signaal
+met het data frame ontvangen</p>
+</li>
+<li>
+<p>je weet dat L2 in de seriële verbindingen geen adressen heeft, en
+dat dit ook niet nodig is omdat zo&#8217;n verbinding maar tussen twee
+apparaten is (er bestaan dan ook geen switches voor seriële
+verbindingen)</p>
+</li>
+<li>
+<p>je kan het MAC-adres van een PC terugvinden in Packet Tracer, maar
+ook dat van je eigen (echte) PC</p>
+</li>
+<li>
+<p>je kan het MAC-adres van een router interface terugvinden in Cisco
+IOS via de command line</p>
+</li>
+<li>
+<p>je weet dat er op de datalinklaag behalve unicast adressen ook een
+broadcast adres is, en er ook multicast adressen bestaan</p>
+</li>
+<li>
+<p>je weet dat er nog hogere protocollagen zijn (L4, ...), hierover
+meer in een latere stap</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_arp_en_icmp_pt_simulatie">2.7. ARP en ICMP, PT simulatie</h3>
+<div class="paragraph">
+<p>(ARP: bij Jeremy&#8217;s IT Lab CCNA zit dit bij Ethernet LAN switching Part
+2)</p>
+</div>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>ARP en PT simulatie:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kent bedoeling van ARP; samengevat: hier is een IP-adres, wie
+heeft dit adres en wat is jouw MAC-adres?</p>
+</li>
+<li>
+<p>je kan ARP frames laten zien in Packet Tracer simulatie</p>
+</li>
+<li>
+<p>je kan in Packet Tracer ook frames van andere protocollen zien (DTP,
+CDP, STP, ...)</p>
+</li>
+<li>
+<p>je kan in Packet Tracer filteren op protocol, en zo bijvoorbeeld
+alleen ARP en ICMP laten zien in de simulator; later gebruik je deze
+filters ook om andere protocollen te bekijken bij foutopsporing of
+gewoon om iets bij te leren</p>
+</li>
+<li>
+<p>je kan PC ARP-tabel wissen om een nieuwe ARP te forceren</p>
+</li>
+<li>
+<p>je weet dat een ARP request om een onbekend MAC-adres te vinden, een
+L2 broadcast pakket is</p>
+</li>
+<li>
+<p>je weet dat ook een router een ARP request zal sturen als hij een
+destination IP heeft maar het destination MAC nog niet kent
+(simuleer dit ook eens)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>ICMP en PT simulatie:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat een ping eigenlijk pakketjes stuurt volgens het ICMP
+protocol, en dat dit echo request en echo replies zijn die dan heen
+en weer gestuurd worden</p>
+</li>
+<li>
+<p>je kan in Packet Tracer simulatie mode een ICMP echo request of
+reply bekijken, en zowel source/destination MAC-adres als
+source/destination IP-adres terugvinden; je vindt ook terug of een
+pakketje een request dan wel een reply is</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Tip in Packet Tracer</strong>: gebruik de fast forward knop (dubbel pijl
+naast de reset knop) om de simulatie te versnellen; dit is onder andere
+handig om het opstartproces (boot) van switch of router te versnellen,
+als je een tikfout gemaakt hebt en Packet Tracer name lookup start
+("Translating ...").</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ethernet_switching_life_of_a_packet">2.8. Ethernet switching / life of a packet</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je begrijpt dat een ethernet switch de data frames ongewijzigd
+doorstuurt</p>
+</li>
+<li>
+<p>je begrijpt dat een switch een soort "intelligente kabel" is: hij
+stuurt gewoon frames door, maar alleen naar de interfaces waar het
+frame moet zijn</p>
+</li>
+<li>
+<p>je snapt werking van switch op basis van de mac tabel, en je weet
+welke twee kolommen er in een mac tabel zitten</p>
+</li>
+<li>
+<p>je weet dat een switch dynamisch leert welke MAC-adressen achter
+welke interface zitten</p>
+</li>
+<li>
+<p>je kan een switch MAC-tabel wissen, en je weet wat het gevolg
+hiervan is</p>
+</li>
+<li>
+<p>je kan in Packet Tracer volgende scenario&#8217;s uitlokken en bekijken in
+simulatie: (1) een switch stuurt een broadcast frame door naar alle
+interfaces, (2) een switch stuurt een unicast frame door naar alle
+interfaces, (3) een switch stuurt een unicast frame door naar 1
+interface (je zorgt er uiteraard voor dat je een switch hebt waar
+genoeg interfaces in gebruik zijn)</p>
+</li>
+<li>
+<p>je kan de huidige MAC-tabel van een switch laten zien</p>
+</li>
+<li>
+<p>je snapt dat een L2 broadcast door een switch uiteraard wel naar
+alle interfaces wordt doorgestuurd</p>
+</li>
+<li>
+<p>je weet dat switchen (in principe) zelf geen MAC-adres hebben</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Life of a packet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je begrijpt nu grondig L2 en L3 adressen (aka MAC en IP-adressen) ,
+en hoe ze samenhangen, en je begrijpt "life of a packet", de video
+van Jeremy&#8217;s IT, CCNA day 12.</p>
+</li>
+<li>
+<p>je hebt nu voldoende geleerd om in een topologie met meerdere
+routers en switches een ICMP pakketje volgen, en voorspellen welke
+source en destination L2 en L3 adressen er gebruikt worden op elk
+punt in de route</p>
+</li>
+<li>
+<p>met andere woorden: je kunt nu life of a packet toepassen in
+computernetwerken met vele switches en routers</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ipv4_subnetting">2.9. IPv4 subnetting</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je snapt dat de hele "ruimte" van alle bruikbare IPv4-adressen
+opgedeeld kan worden in subnetten, en dat een subnet zelf verder
+opgedeeld kan worden in kleiner subnetten</p>
+</li>
+<li>
+<p>je kent de afkortingen FLSM (fixed length subnet mask) en VLSM
+(variable length subnet mask); je kan zelf subnetten berekenen,
+zowel in gelijke grootte als verschillende grootte</p>
+</li>
+<li>
+<p>je snapt dat bij het indelen in subnetten er bruikbare IPv4-adressen
+verloren gaan (meer netwerkadressen en broadcastadressen)</p>
+</li>
+<li>
+<p>je kan zelf een willekeurig IPv4-netwerk (bijvoorbeeld 10.11.0.0/16) indelen
+in subnetten aan de hand van het gegeven aantal hosts in de
+verschillende subnetten</p>
+</li>
+<li>
+<p>je snapt dat een bit meer of minder in een IPv4-netwerkdeel de
+grootte van het netwerk halveert of verdubbelt; bijvoorbeeld een /30
+netwerk heeft 4 adressen (waarvan 2 hostadressen), een /29 netwerk
+heeft 8 adressen (waarvan 6 hostadressen), een /28 heeft 16 adressen
+enzovoort.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ipv6">2.10. IPv6</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>Kennis IPv6:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat een IPv6-adres 128 bits lang is (4x lengte van IPv4
+adres)</p>
+</li>
+<li>
+<p>je kent twee notaties: de volledige (hexadecimale) notatie, en de
+verkorte notatie; je kan de ene in de andere omzetten</p>
+</li>
+<li>
+<p>je kan de hexadecimale notaties omzetten naar binaire notaties, en
+omgekeerd</p>
+</li>
+<li>
+<p>je kent volgende gelijkenissen tussen IPv6 en IPv4:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>eveneens opdeling in netwerkdeel en hostdeel (heel vaak 64+64
+bits)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>je kent volgende verschillen tussen IPv6 en IPv4:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>soms is netwerkdeel van een IPv6-adres nog eens opgesplitst in
+een global routing prefix (48 bits) en een subnet ID (16 bits)</p>
+</li>
+<li>
+<p>een interface met IPv6 krijgt meestal 2 adressen: een link-local
+adres (LLA) en een global unicast adres (GUA)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>je herkent een LLA</p>
+</li>
+<li>
+<p>je weet dat een LLA vaak automatisch wordt toegekend, en hierbij
+afgeleid wordt van het MAC-adres (volgens een standaard of principe
+genaamd EUI-64), zodat het uniek is (omdat MAC-adressen in principe
+uniek zijn)</p>
+</li>
+<li>
+<p>je weet dat een LLA niet gerouteerd wordt (door geen enkele router)</p>
+</li>
+<li>
+<p>je weet dat een GUA wereldwijd uniek is, wel gerouteerd wordt, en
+dus bedoeld is om over het internet te communiceren</p>
+</li>
+<li>
+<p>je kan subnetten maken in IPv6</p>
+</li>
+<li>
+<p>je weet dat IPv4 en IPv6 samen/door mekaar gebruikt kunnen worden</p>
+</li>
+<li>
+<p>je weet dat ICMPv6 ook een echo request/response heeft, je kan dus
+ook pingen met IPv6</p>
+</li>
+<li>
+<p>je weet dat IPv6 eveneens op L3 in het OSI model zit; het is gewoon
+een andere manier om laag 3 te implementeren; de laag eronder blijft
+dezelfde (Ethernet MAC-adressen) ; ARP bestaat echter niet voor IPv6
+(zie verder)</p>
+</li>
+<li>
+<p>je weet dat er voor IPv6 is er geen ARP protocol, maar wel een
+Network Discovery Protocol (ND of NDP) met gelijkaardige functie</p>
+</li>
+<li>
+<p>je weet dat de het ND protocol meerdere types berichten heeft,
+waaronder Neighbour Solicitation en Neighbour Advertisement (NS en
+NA) ; (zie verder voor een paar andere types ND berichten)</p>
+</li>
+<li>
+<p>je weet dat NS en NA in IPv6 voor hetzelfde gebruikt kunnen worden
+als ARP voor IPv4</p>
+</li>
+<li>
+<p>je weet dat het ND protocol een L3 protocol is, terwijl ARP een L2
+protocol is; je ziet dus dat een gelijkaardig functie (namelijk het
+vinden van het MAC-adres van een host waarvan je het IP-adres kent)
+bij IPv6 in een hogere protocollaag zit dan bij IPv4</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Packet Tracer met IPv6:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat IPv6 in een router eerst moet aangezet worden</p>
+</li>
+<li>
+<p>je kan alle IPv4 Packet Tracer configuratie-oefeningen nu ook met
+IPv6 maken:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>hosts configureren (met LLA en GUA)</p>
+</li>
+<li>
+<p>router interfaces configureren (best ook met LLA en GUA)</p>
+</li>
+<li>
+<p>statische routes toevoegen aan routers (alleen GUA)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>(tip: neem al je gemaakte en bewaarde IPv4 oefeningen, en voeg er
+IPv6 aan toe)</p>
+</li>
+<li>
+<p>je kan pingen met IPv6-adressen, host naar host, of host naar router
+interface</p>
+</li>
+<li>
+<p>je gebruikt ook eens een LLA op de routers/gateway met waarde fe80:: en
+je test uit dat je elke router interface hetzelfde LLA adres fe80:: kan geven
+omdat het LLA alleen binnen het L2 broadcast domein    uniek moet zijn</p>
+</li>
+<li>
+<p>je kan NS en NA berichten zien in Packet Tracer waarbij een host het
+MAC-adres vraagt van een IPv6 host in zijn broadcast domein</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Eigen computer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>heb je op je eigen computer een IPv6-adres?</p>
+</li>
+<li>
+<p>zie je IPv6 communicatie in wireshark?</p>
+</li>
+<li>
+<p>vind je IPv6-adressen voor servers op het internet? wat geeft "ping
+www.google.be" op je computer? het IPv4 of
+het IPv6-adres?</p>
+</li>
+<li>
+<p>kan je jouw default gateway pingen met ICMPv6?</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_osi_vervolg_tcpudp_client_server_dns">2.11. OSI vervolg, TCP/UDP, client-server, DNS, &#8230;&#8203;</h3>
+<div class="paragraph">
+<p>We hebben het al gehad over lagen 1, 2 en 3 in het OSI model. Je kent de
+namen toch nog? We kijken nu naar de overige lagen.</p>
+</div>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat het OSI netwerkmodel 7 protocollagen beschrijft, maar
+dat in de praktijk de 3 hoogste lagen worden samengenomen, en dat
+ook de twee onderste lagen bij Ethernet eigenlijk samen in 1
+standaard zitten, waarbij er toch wel een duidelijk verschil is
+tussen de fysieke lagen van Ethernet fiber en Ethernet copper</p>
+</li>
+<li>
+<p>je weet dat de netwerken die wij bestuderen de TCP/IP protocolstack
+gebruiken, en dat TCP een L4 protocol is (transportlaag), en IP een
+L3 procotol is (netwerklaag)</p>
+</li>
+<li>
+<p>je weet dat nog een tweede laag 4 protocol is dat vaak gebruikt
+wordt: UDP</p>
+</li>
+<li>
+<p>je weet waarvoor de afkortingen UDP en TCP staan</p>
+</li>
+<li>
+<p>je begrijpt het dubbele idee achter een gelaagd model:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>enerzijds: een <strong>zender</strong> van data gaat de data <strong>van boven naar
+onder</strong> in de protocollagen doorsturen, waarna het over een
+fysiek medium naar de ontvanger wordt gestuurd, en bij de
+<strong>ontvanger</strong> gaat <strong>het van onder naar boven</strong> terug tot bij de     applicatie (encapsulatie/decapsulatie)</p>
+</li>
+<li>
+<p>anderzijds: een applicatie op de ene computer communiceert
+eigenlijk met een applicatie op de andere computer, alsof al die
+onderliggen lagen niet bestaan; de applicatie aan de ene kant
+hoeft de details van het netwerkmodel niet te weten om te kunnen
+praten met de applicatie aan de andere kant</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>je kent het "client-server" model, je kan het verschil tussen client
+en server uitleggen</p>
+</li>
+<li>
+<p>je weet dat UDP "connectionless" is, terwijl TCP een "connection"
+protocol is</p>
+</li>
+<li>
+<p>je weet dat het opzetten van een TCP connectie in 3 stappen gebeurt</p>
+</li>
+<li>
+<p>je ziet het verband tussen client-server op applicatieniveau en
+TCP-protocol (met name: de server zit te wachten, het is de client
+de het initiatief neemt en TCP opstart)</p>
+</li>
+<li>
+<p>je kent volgende gelijkenis tussen UDP en TCP: beide gebruiken
+poortnummers; je begrijpt waarom poortnummers nodig/nuttig zijn; je
+snapt dat er "source" en "destination" poorten zijn</p>
+</li>
+<li>
+<p>je weet dat UDP bijna niks toevoegt bovenop IP, maar dat TCP wel
+heel wat functionaliteit toevoegt bovenop IP:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>TCP biedt betrouwbare communicatie, zelfs al gaan er pakketjes
+verloren</p>
+</li>
+<li>
+<p>TCP doet dit door bij te houden welke pakketjes goed zijn
+aangekomen, volgnummers te gebruiken, en te vragen om een pakket
+opnieuw te sturen als de ontvanger merkt dat er iets ontbreekt</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>je weet dat op L4 niveau de eenheid van data een "segment" wordt
+genoemd, een TCP segment dus, op L3 niveau spreken we van pakketten
+(IP pakket dus), en op L2 niveau van een frame (een ethernet frame
+dus)</p>
+</li>
+<li>
+<p>je kent een aantal applicatieprotocollen (die bijgevolg gebruikmaken
+van L4): DNS, SSH, DHCP en weet waarvoor die dienen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Praktijk: in een wireshark "capture" kan je:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>de L4 gebruikte poortnummers terugvinden</p>
+</li>
+<li>
+<p>een TCP connectie volgen</p>
+</li>
+<li>
+<p>applicatieprotocollen terugvinden (DNS, DHCP, HTTP, HTTPS, ...)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wat je niet moet kennen/kunnen voor deze stap:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je hoeft de betekenis van OSI-lagen presentatie (L6) en sessie (L5)
+niet te kennen</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ipv4_dynamische_adressering_dhcp">2.12. IPv4 dynamische adressering (DHCP)</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>Kennis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je begrijpt de bedoeling van DHCP</p>
+</li>
+<li>
+<p>je weet welke extra configuratie (behalve IPv4-adres) via DHCP kan
+doorgegeven worden</p>
+</li>
+<li>
+<p>je weet dat het eerste pakket dat een DHCP client stuurt, een DHCP
+discover is, en dat dit een IPv4 broadcast pakket is</p>
+</li>
+<li>
+<p>je weet waarom een DHCP-server in het eigen netwerk moet zitten
+(tenzij er een relay is) ; je begrijpt dus het nut van een DHCP
+relay</p>
+</li>
+<li>
+<p>je weet dat communicatie tussen DHCP-relay en DHCP-server unicast is</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Packet Tracer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan een DHCP-server configureren op een Cisco router</p>
+</li>
+<li>
+<p>je kan hosts configureren om DHCP client te zijn</p>
+</li>
+<li>
+<p>je kan ook een Cisco router interface configuren om DHCP client te
+zijn</p>
+</li>
+<li>
+<p>je kan een DHCP-relay opzetten</p>
+</li>
+<li>
+<p>je kan DNS informatie en domeinnaam meegeven bij de DHCP
+configuratie</p>
+</li>
+<li>
+<p>je kan een PC in Packet Tracer het DHCP proces laten (her)starten,
+je kent release en renew opties in de ipconfig command prompt</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Eigen computer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>heb je al eens een DHCP release/renew gedaan op je eigen computer?</p>
+</li>
+<li>
+<p>doe het ook eens terwijl wireshark draait.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Vraag: heb je al eens nagekeken van welk L4 protocol DHCP gebruikmaakt?
+Kijk het eens na in een Packet Tracer simulatie. Of controleer het in
+Wireshark op je eigen computer.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_ipv6_dynamische_adressering">2.13. IPv6 dynamische adressering</h3>
+<div class="paragraph">
+<p>IPv6 kent ook DHCP. Maar IPv6 heeft meer dan de klassieke DHCP, dus het
+automatisch configureren van hosts is wat complexer. In deze stap leer
+je over SLAAC en DHCPv6.</p>
+</div>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat er drie manier bestaan om automatisch IPv6 hosts te
+configureren: (1) SLAAC only, (2) SLAAC met stateless DHCP, en (3)
+DHCPv6</p>
+</li>
+<li>
+<p>je kan de verschillen tussen deze 3 methodes uitleggen</p>
+</li>
+<li>
+<p>je kan deze drie methodes uitvoeren in een router in Cisco packet
+tracer</p>
+</li>
+<li>
+<p>je weet dat onderliggend de Network Discovery (ND of NDP) pakketten
+van type Router Advertisement (RA) en Router Solicitation (RS) een
+rol spelen bij SLAAC/DHCPv6</p>
+</li>
+<li>
+<p>je kan deze drie methodes van dynamische IPv6 configuratie
+troubleshooten</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wat je niet moet kennen/kunnen voor deze stap:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je hoeft niet alle RA vlaggen die van belang zijn voor SLAAC/DHCPv6
+uit het hoofd te kennen; maar je moet het wel kunnen opzoeken,
+toepassen, en fouten vinden, dus ook alles kunnen verklaren met je
+cursus of nota&#8217;s ernaast.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_nat_ipv4">2.14. NAT (IPv4)</h3>
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:</p>
+</div>
+<div class="paragraph">
+<p>Kennis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je snapt de hoofdreden dat NAT nog vaak gebruikt wordt (met name:
+gebrek aan IPv4 publieke adressen)</p>
+</li>
+<li>
+<p>je kent de acroniemen NAT en PAT</p>
+</li>
+<li>
+<p>je weet dat PAT het zelfde is als dynamic NAT met overload</p>
+</li>
+<li>
+<p>je begrijpt het basisprincipe achter statische NAT</p>
+</li>
+<li>
+<p>je begrijpt dat statische NAT de mogelijkheid biedt om een server in
+het private netwerk van buitenaf bereikbaar te maken (terwijl dat
+bij dynamische NAT niet kan werken)</p>
+</li>
+<li>
+<p>je begrijpt het basisprincipe achter dynamische NAT zonder overload,
+je weet dus welk deel in een data frame wordt aangepast door het NAT
+proces</p>
+</li>
+<li>
+<p>je begrijpt het basisprincipe achter NAT met overload (PAT), je weet
+dus dat er behalve een IPv4-adres mogelijk ook een L4 poort wordt
+aangepast</p>
+</li>
+<li>
+<p>je begrijpt hoe een NAT router de pakketten van binnen naar buiten
+aanpast, maar ook hoe de NAT router de bijhorende pakketten (meestal
+de "responses") van buiten naar binnen terug aanpast</p>
+</li>
+<li>
+<p>je weet dat onze home routers thuis meestal dynamic NAT met overload
+doen, en je snapt waarom</p>
+</li>
+<li>
+<p>je snapt dat een ping door dynamische NAT maar in één richting kan
+gestart worden, terwijl er uiteindelijk toch in twee richtingen
+(request/reply) pakketten doorkomen</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Packet Tracer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan NAT configureren op een Cisco router, zowel statisch als
+dynamisch, en voor dynamisch zowel met als zonder overload</p>
+</li>
+<li>
+<p>je kan via simulatie in Packet Tracer aantonen dat NAT zijn werk
+juist doet</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Life of a packet:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan de "life of a packet" foutloos toepassen op situaties met een
+NAT, d.w.z. je weet van een pakketje op elke plaats in het netwerk
+wat het MAC-adres is en wat het IP-adres is</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wat je niet moet kennen/kunnen:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je hoeft geen NAT voor IPv6 te kennen</p>
+</li>
+<li>
+<p>je hoeft geen NAT64 te kennen</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_je_eigen_thuisnetwerk_begrijpen">2.15. je eigen thuisnetwerk begrijpen</h3>
+<div class="paragraph">
+<p>Probeer nu eens de volgende vragen te beantwoorden en/of opdrachten uit
+te voeren:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>wat is het IPv4-adres van je eigen computer?</p>
+</li>
+<li>
+<p>zit je achter een NAT voor IPv4? (tip: de kans is groot)</p>
+</li>
+<li>
+<p>hoe zou je kunnen zien dat je achter een NAT zit? tip: er bestaan
+webservers die het IPv4-adres waarnaar zij hun antwoorden
+terugsturen, op de webpagina laten zien; snap je hoe dit werkt?</p>
+</li>
+<li>
+<p>je begrijpt dat als het IPv4-adres dat je computer heeft niet
+overeenkomt met het IPv4-adres waarnaar een web server zijn
+antwoorden stuurt, je wel achter een NAT moet zitten</p>
+</li>
+<li>
+<p>heb je een IPv6-adres, en kan je daarmee op het internet? en zo ja:
+zit je voor IPv6 ook achter een NAT? of ziet de server op het
+internet het IPv6-adres van jouw computer?</p>
+</li>
+<li>
+<p>heb je het netwerk dat je thuis gebruikt al eens in kaart gebracht?
+heb je maar 1 toestel (bijvoorbeeld de modem-router van de provider) of heb
+je meerdere toestellen? indien meerdere: weet je waarvoor die andere
+toestellen dienen? Mogelijk dienen die andere toestellen vooral om
+je draadloze toegang te verschaffen.</p>
+</li>
+<li>
+<p>heb je al eens nagedacht wat er allemaal in een router van jouw
+provider zit?</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Een paar links (helaas met veel reclame):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://whatismyipaddress.com/" target="_blank" rel="noopener">https://whatismyipaddress.com/</a></p>
+</li>
+<li>
+<p><a href="https://www.showmyip.com/" target="_blank" rel="noopener">https://www.showmyip.com/</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wat er typisch in een home-router zit, is een combinatie van:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Een "modem" of iets dergelijks. Intern in jouw huis gebruik je
+ethernet en Wifi, naar buiten toe zal het misschien een andere
+technologie zijn zoals de coaxkabel van de TV distributie, of de
+telefoonkabel van de vroegere analoge telefoon waar VDSL
+modulatie op gebruikt wordt; dit moet dus "geconverteerd" worden naar Ethernet/Wifi.</p>
+</li>
+<li>
+<p>Een router (omdat jouw thuisnetwerk een ander IPv4 en IPv6
+netwerk is dan het netwerk van jouw provider)</p>
+</li>
+<li>
+<p>Een NAT (omdat je waarschijnlijk maar 1 publiek IPv4-adres
+gebruikt voor al jouw toestellen thuis)</p>
+</li>
+<li>
+<p>Een switch: om meer dan 1 poort/interface in jouw thuisnetwerk
+te hebben, dus om meer dan 1 Ethernet apparaat aan jouw home-router te kunnen hangen</p>
+</li>
+<li>
+<p>Een access point om draadloos toegang te hebben. Een access point is sowieso bedoeld
+om meerdere apparaten te laten connecteren.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_deel_2_technologieën_in_een_bedrijfsnetwerk">3. Deel 2: technologieën in een bedrijfsnetwerk</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Dit deel moet nog geschreven worden. Alleen de titels van de stappen zijn al aangemaakt.</p>
+</div>
+<div class="sect2">
+<h3 id="_svi_en_loopback">3.1. SVI en loopback</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_paswoorden_ssh">3.2. paswoorden / SSH</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_vlans">3.3. VLAN&#8217;s</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_multi_layer_switches_mls">3.4. multi-layer switches (MLS)</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_ospf_v2">3.5. OSPF (v2)</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_stp">3.6. STP</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_linkaggregatie_etherchannel">3.7. Linkaggregatie (Etherchannel)</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_access_control_lists">3.8. Access control lists</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_design_integratie_redundantie">3.9. Design &amp; Integratie, redundantie</h3>
+
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2025-10-16 07:37:10 UTC
+</div>
+</div>
+</body>
+</html>
