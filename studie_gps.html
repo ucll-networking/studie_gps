@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.24">
+<meta name="generator" content="Asciidoctor 2.0.26">
 <title>Computernetwerken Studie-GPS</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -470,11 +470,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#_deel_2_technologieën_in_een_bedrijfsnetwerk">3. Deel 2: technologieën in een bedrijfsnetwerk</a>
 <ul class="sectlevel2">
-<li><a href="#_svi_en_loopback">3.1. SVI en loopback</a></li>
-<li><a href="#_paswoorden_ssh">3.2. paswoorden / SSH</a></li>
-<li><a href="#_vlans">3.3. VLAN&#8217;s</a></li>
-<li><a href="#_multi_layer_switches_mls">3.4. multi-layer switches (MLS)</a></li>
-<li><a href="#_ospf_v2">3.5. OSPF (v2)</a></li>
+<li><a href="#_multi_layer_switches_mls_aka_layer_3_switches">3.1. multi-layer switches (MLS) aka Layer 3 switches</a></li>
+<li><a href="#_vlans">3.2. VLAN&#8217;s</a></li>
+<li><a href="#_svi_en_loopback">3.3. SVI en loopback</a></li>
+<li><a href="#_paswoorden_ssh">3.4. paswoorden / SSH</a></li>
+<li><a href="#_ospf_v2v3">3.5. OSPF (v2/v3)</a></li>
 <li><a href="#_stp">3.6. STP</a></li>
 <li><a href="#_linkaggregatie_etherchannel">3.7. Linkaggregatie (Etherchannel)</a></li>
 <li><a href="#_access_control_lists">3.8. Access control lists</a></li>
@@ -1219,6 +1219,9 @@ niet meer werkt</p>
 <p>je kan ook een ping versturen vanaf een router CLI naar eender welk
 ander IP-adres</p>
 </li>
+<li>
+<p>je kan floating static routes configureren en kan ze activeren/deactiveren door iets in het netwerk te veranderen</p>
+</li>
 </ul>
 </div>
 <div class="paragraph">
@@ -1257,6 +1260,9 @@ en multimode</p>
 <li>
 <p>je weet dat er SFP (small form-factor pluggable) modules bestaan om
 extra interfaces toe te voegen</p>
+</li>
+<li>
+<p>je begrijpt floating static routes</p>
 </li>
 </ul>
 </div>
@@ -2127,51 +2133,325 @@ om meerdere apparaten te laten connecteren.</p>
 <div class="sect1">
 <h2 id="_deel_2_technologieën_in_een_bedrijfsnetwerk">3. Deel 2: technologieën in een bedrijfsnetwerk</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_multi_layer_switches_mls_aka_layer_3_switches">3.1. multi-layer switches (MLS) aka Layer 3 switches</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>je begrijpt dat een MLS de functies van een swich en een router combineert in 1 toestel</p>
+</li>
+<li>
+<p>je begrijpt het onderscheid tussen een switched port en een routed port in een MLS</p>
+</li>
+<li>
+<p>je kan alle configuraties die je een L2 switch of een router moeten kunnen, ook op een MLS toepassen</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>Dit deel moet nog geschreven worden. Alleen de titels van de stappen zijn al aangemaakt.</p>
+<p>Denk eens na over volgende vraag:
+Bij "gewone" switches en routers kan je het aantal IP netwerken gemakkelijk tellen
+omdat je weet dat een router IP netwerken scheidt, en elke router interface bij een ander IP netwerk hoort.
+Kan dit nog gemakkelijk tellen als je een MLS hebt in je netwerk?</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_svi_en_loopback">3.1. SVI en loopback</h3>
-
+<h3 id="_vlans">3.2. VLAN&#8217;s</h3>
+<div class="paragraph">
+<p>Probeer eerst het principe van VLAN&#8217;s te begrijpen.
+Een goede analogie is om het je voor te stellen als aparte switches die op elkaar gestapeld zijn,
+waarbij elke VLAN een nieuwe switch is op de stapel. Deze switches zijn niet verbonden met elkaar.</p>
+</div>
+<div class="paragraph">
+<p>Probeer dan het principe van een VLAN trunk te begrijpen.
+Een goede analogie is een bundel virtuele ethernet kabels die als het ware allemaal in 1 fysieke kabel zitten.
+Maar elke virtuele kabel hoort bij 1 VLAN.</p>
+</div>
+<div class="paragraph">
+<p>Denk dan eens goed na wat er zou moeten gebeuren als zo&#8217;n trunk kabel aan een router aankomt,
+nog steeds met de analogie van een bundel virtuele kabels die allemaal bij die router aankomen.
+Hoe verwacht je dat dit werkt?</p>
+</div>
+<div class="paragraph">
+<p>Vaardigheden:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan VLAN&#8217;s en VLAN trunks configureren op switches, routers en MLS</p>
+</li>
+<li>
+<p>je kan aantonen in een simulatie dat een VLAN effectief doet wat het moet doen (denk aan L2 broadcast, denk aan switch unicast flooding)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kennis: je kan volgende VLAN gerelateerde concepten uitleggen</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>trunk</p>
+</li>
+<li>
+<p>inter-VLAN routing</p>
+</li>
+<li>
+<p>router subinterfaces</p>
+</li>
+<li>
+<p>dot1Q encapsulation</p>
+</li>
+<li>
+<p>router on a stick</p>
+</li>
+<li>
+<p>router subinterfaces</p>
+</li>
+<li>
+<p>tagging / tagged frames</p>
+</li>
+<li>
+<p>access port versus trunk port</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_paswoorden_ssh">3.2. paswoorden / SSH</h3>
-
+<h3 id="_svi_en_loopback">3.3. SVI en loopback</h3>
+<div class="paragraph">
+<p>Cisco switch/packet tracer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan een SVI aanmaken (en ook meerdere)</p>
+</li>
+<li>
+<p>je kan een IP-adres toekennen aan een SVI</p>
+</li>
+<li>
+<p>je kan een default-gateway instellen in een switch</p>
+</li>
+<li>
+<p>je kan een SVI pingen vanaf een PC of router</p>
+</li>
+<li>
+<p>je kan vanaf een PC or router pingen naar een SVI in een switch</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kennis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je weet dat beide SVI en loopback interface virtuele L3 interfaces zijn</p>
+</li>
+<li>
+<p>je weet een SVI typisch in een switch bestaat,  terwijl een loopback interface in een router bestaat</p>
+</li>
+<li>
+<p>je weet dat een SVI aan een VLAN gekoppeld is</p>
+</li>
+<li>
+<p>je weet waarvoor het acroniem SVI staat</p>
+</li>
+<li>
+<p>je begrijpt dat de basisfunctie van de switch/router niet verandert door er een SVI/loopback op in te stellen</p>
+</li>
+<li>
+<p>opdracht: wat dan met multi-layer switches (zie verder)?
+kan daar een SVI gemaakt worden?
+kan daar een loopback gemaakt worden?</p>
+</li>
+<li>
+<p>je begrijpt dat het Cisco commando "interface vlan" voor SVI configuratie is, en niet voor de VLAN zelf</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Het nut van SVI en loopback: zie ssh</p>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_vlans">3.3. VLAN&#8217;s</h3>
-
+<h3 id="_paswoorden_ssh">3.4. paswoorden / SSH</h3>
+<div class="paragraph">
+<p>TODO eerst zelf nog studeren&#8230;&#8203;
+(welke paswoorden zijn er ook alweer allemaal? basic password settings, line password, enable password?
+password vs secret? )
+(is line password op console zelfde als basic password?? )</p>
+</div>
+<div class="paragraph">
+<p><a href="https://media.defense.gov/2022/Feb/17/2002940795/-1/-1/1/CSI_CISCO_PASSWORD_TYPES_BEST_PRACTICES_20220217.PDF" class="bare">https://media.defense.gov/2022/Feb/17/2002940795/-1/-1/1/CSI_CISCO_PASSWORD_TYPES_BEST_PRACTICES_20220217.PDF</a></p>
+</div>
+<div class="paragraph">
+<p>TODO: ssh keys nog eens bekijken.</p>
+</div>
+<div class="paragraph">
+<p>In packet tracer:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je kan een ssh sessie opzetten vanaf een PC naar een switch (typsich met SVI IP adres)</p>
+</li>
+<li>
+<p>je kan een ssh sessie opzetten vanaf een PC naar een router (typisch met loopback IP adres)</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect2">
-<h3 id="_multi_layer_switches_mls">3.4. multi-layer switches (MLS)</h3>
-
+<h3 id="_ospf_v2v3">3.5. OSPF (v2/v3)</h3>
+<div class="paragraph">
+<p>Vaardigheden:</p>
 </div>
-<div class="sect2">
-<h3 id="_ospf_v2">3.5. OSPF (v2)</h3>
-
+<div class="ulist">
+<ul>
+<li>
+<p>je kan OSPF (v2 en v3) configureren (single area voldoende)</p>
+</li>
+<li>
+<p>je kan OSPFv2 configureren op twee manieren (globale network configuratie of per-interface configuratie)</p>
+</li>
+<li>
+<p>je kan foutopsporing in routing doen, nu ook met OSPF</p>
+</li>
+<li>
+<p>je kan op basis een topologie voorspellen welke netwerken door OSPF aan een routing tabel toegevoegd gaan worden</p>
+</li>
+<li>
+<p>je kan een default route delen via OSPF</p>
+</li>
+<li>
+<p>je kan een router configuren zodanig dat hij als DR of BDR geforceerd wordt in een bepaald BC domein (via priority)</p>
+</li>
+<li>
+<p>je kan een OSPF proces herstarten in een router</p>
+</li>
+<li>
+<p>je kan OSPF neighbours van een router laten zien via CLI</p>
+</li>
+<li>
+<p>je kan laten zien welk delen van een routing tabel door OSPF zijn toegevoegd</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Kennis:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>je begrijpt het principe van dynamische routering</p>
+</li>
+<li>
+<p>je weet dat er verschillende protocollen bestaan voor dynamische routering en twee grote groepen</p>
+</li>
+<li>
+<p>je kan kort omschrijven wat een link-state protocol is</p>
+</li>
+<li>
+<p>je begrijpt dat OSPF een link-state protocol is</p>
+</li>
+<li>
+<p>je begrijpt het concept "administrative distance" (AD) bij routing</p>
+</li>
+<li>
+<p>je begrijpt hoe OSPF netwerkadressen afleidt uit de configuratie (opgelet: interface IP adres speelt altijd een rol)</p>
+</li>
+<li>
+<p>je weet wat "default-information originate" betekent, waarvoor dit dient</p>
+</li>
+<li>
+<p>je kan uitleggen wat het nut is van DR/BDR, en dus weet je dat er 1 DR/BDR is per BC domein (en bijgevolg kan een router DR zijn in één BC domein, maar geen DR zijn in een ander domein)</p>
+</li>
+<li>
+<p>je begrijpt dat OSPF aanpassingen kan doen in de routing tabellen bij wijzigingen in het netwerk</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Wat je niet moet kennen/kunnen in verband met OSPF:
+- je hoeft niet de soorten OSPF pakketjes uit het hoofd te kennen (maar je weet wel dat het begint met HELLO)
+- je hoeft niet al de fases in het protocol te kennen (maar je weet wel dat het eindigt in 2-way state of FULL state)
+- je hoeft niet uit het hoofd kunnen uitrekenen welke router de DR of BDR wordt, en die regels moet je zeker niet uit het hoofd kennen</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_stp">3.6. STP</h3>
-
+<div class="paragraph">
+<p>Je bent klaar met deze stap wanneer je het volgende kent of kan:
+je weet waar STP en Rapid STP voor staan
+je kan duidelijk uitleggen welk probleem er zou ontstaan zonder een STP
+je kan STP pakketjes zien in packet tracer simulatie mode, en de velden erin bekijken
+je weet dat STP protocollen bepaalde poorten blokkeren voor gewoon netwerkverkeer (maar dat er nog steeds STP protocol pakketjes doorkomen)
+je weet dat er verschillen zijn tussen STP en rapid STP, zowel in aantal poort-rollen, als in aantal poorttoestanden (zonder de details te kennen)
+je weet dat het resultaat van STP een boomstructuur is (tree), en kan die herkennen in een STP configuratie in packet tracer
+je kan de root bridge en zijn root poort terugvinden in een STP configuratie in packet tracer
+je bent je ervan bewust dat een netwerkgebruiker in een bedrijf een switch zou kunnen verbinden via de ethernet-wandcontactdoos, en zo ook extra lussen kan creëren in een bedrijfsnetwerk zonder medeweten van de netwerkbeheerder</p>
+</div>
+<div class="paragraph">
+<p>Wat je niet moet kennen/kunnen:
+je hoeft het STP algoritme niet in detail te kennen; dus je hoeft niet met de hand kunnen narekenen welke switch de root bridge wordt, of welke poorten blocked of designated zullen zijn (CCNA/Jeremy’s IT Lab gaat daar erg in detail)
+je hoeft niet alle verschillen tussen STP en RSTP uit het hoofd kennen</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_linkaggregatie_etherchannel">3.7. Linkaggregatie (Etherchannel)</h3>
-
+<div class="paragraph">
+<p>Etherchannel
+Je bent klaar met deze stap wanneer je het volgende kent of kan:
+je begrijpt het nut van linkaggreatie
+je begrijpt dat STP in werking komt als je gewoon twee switches met twee kabels verbindt, en dat dit niet is wat je wenst bij linkaggreatie
+je kan LACP configureren op Cisco switches, met twee maar ook met meer dan twee links
+je weet dat er heel wat opties bestaan die je niet allemaal goed moet kennen, maar je kan wel foutopsporing doen in verband met verkeerde instellingen</p>
+</div>
+<div class="paragraph">
+<p>Wat je niet moet kennen/kunnen:
+PAgP hoef je niet te kennen, LACP is voldoende
+je mag steeds active-active LACP config gebruiken, je hoeft niet alle combinaties die mogelijk zijn te kunnen gebruiken (je moet het wel kunnen terugvinden in de handleidingen indien nodig)</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_access_control_lists">3.8. Access control lists</h3>
-
+<div class="paragraph">
+<p>Leer ACL&#8217;s
+Je bent klaar met deze stap wanneer je het volgende kent of kan:
+standaard ACL’s configureren, met begrip van de vuistregels over de router interface en de richting voor een standaard ACL
+extended ACL’s configureren, met begrip van de vuistregels over de router interface en de richting voor een advanced ACL
+ACL’s met meerdere permit/deny kan je lezen (en begrijpen), en ook zelf schrijven op basis van de verreisten
+je begrijpt de impliciete laatste regel in een ACL
+je kan foutopsporing doen voor ACL’s</p>
+</div>
 </div>
 <div class="sect2">
 <h3 id="_design_integratie_redundantie">3.9. Design &amp; Integratie, redundantie</h3>
-
+<div class="paragraph">
+<p>Nu oefen je op design en integratie.
+Je bent klaar met deze stap wanneer je het volgende kent of kan:
+alles configureren in grote oefeningen maken waarbij alle of bijna alle gezien leerstof in 1 topologie in packet tracer samenkomt
+op basis van verreisten van aantal eindgebruikers een gegeven IPv4 netwerk subnetten en toepassen in een ontwerp
+op basis van verreisten van aantal afdelingen een netwerk uittekenen met VLAN’s, switches, een MLS, en routers, en toepassen in een ontwerp
+FHRP: je weet wat het is, waarvoor het dient (HSRP op cisco), en dat het kadert in “redundantie”
+HSRP: je begrijpt dat daar verschillende mogelijkheden zijn als een primaire terug online komt: gaat die primaire terug overnemen, of blijft de secundaire? (todo); je kan snel terugvinden hoe het bij HSRP werkt</p>
+</div>
+<div class="paragraph">
+<p>backup routes (floating routes) ; bij redundnatie zien</p>
+</div>
+<div class="paragraph">
+<p>Niet kennen:
+je hoeft geen HSRP configuratie te kunnen doen</p>
+</div>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2025-10-16 15:41:31 UTC
+Last updated 2026-01-21 10:44:48 UTC
 </div>
 </div>
 </body>
