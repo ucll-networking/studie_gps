@@ -394,6 +394,8 @@ Packet Tracer:
     niet meer werkt
 - je kan ook een ping versturen vanaf een router CLI naar eender welk
     ander IP-adres
+- je kan floating static routes configureren en kan ze activeren/deactiveren door iets in het netwerk te veranderen 
+
 
 Kennis:
 
@@ -415,7 +417,7 @@ Kennis:
     en multimode
 - je weet dat er SFP (small form-factor pluggable) modules bestaan om
     extra interfaces toe te voegen
-
+- je begrijpt floating static routes
 
 ### OSI model intro (L1-L3)
 
@@ -866,22 +868,189 @@ Wat er typisch in een home-router zit, is een combinatie van:
 
 ## Deel 2: technologieën in een bedrijfsnetwerk
 
-Dit deel moet nog geschreven worden. Alleen de titels van de stappen zijn al aangemaakt.
+### multi-layer switches (MLS) aka Layer 3 switches
 
-### SVI en loopback
+- je begrijpt dat een MLS de functies van een swich en een router combineert in 1 toestel 
+- je begrijpt het onderscheid tussen een switched port en een routed port in een MLS 
+- je kan alle configuraties die je een L2 switch of een router moeten kunnen, ook op een MLS toepassen
 
-### paswoorden / SSH
+Denk eens na over volgende vraag: 
+Bij "gewone" switches en routers kan je het aantal IP netwerken gemakkelijk tellen 
+omdat je weet dat een router IP netwerken scheidt, en elke router interface bij een ander IP netwerk hoort. 
+Kan dit nog gemakkelijk tellen als je een MLS hebt in je netwerk? 
+
 
 ### VLAN's
 
-### multi-layer switches (MLS)
+Probeer eerst het principe van VLAN's te begrijpen. 
+Een goede analogie is om het je voor te stellen als aparte switches die op elkaar gestapeld zijn,
+waarbij elke VLAN een nieuwe switch is op de stapel. Deze switches zijn niet verbonden met elkaar. 
 
-### OSPF (v2)
+Probeer dan het principe van een VLAN trunk te begrijpen. 
+Een goede analogie is een bundel virtuele ethernet kabels die als het ware allemaal in 1 fysieke kabel zitten. 
+Maar elke virtuele kabel hoort bij 1 VLAN. 
+
+Denk dan eens goed na wat er zou moeten gebeuren als zo'n trunk kabel aan een router aankomt, 
+nog steeds met de analogie van een bundel virtuele kabels die allemaal bij die router aankomen. 
+Hoe verwacht je dat dit werkt? 
+
+Vaardigheden: 
+
+- je kan VLAN's en VLAN trunks configureren op switches, routers en MLS 
+- je kan aantonen in een simulatie dat een VLAN effectief doet wat het moet doen (denk aan L2 broadcast, denk aan switch unicast flooding)
+
+
+Kennis: je kan volgende VLAN gerelateerde concepten uitleggen  
+
+- trunk
+- inter-VLAN routing 
+- router subinterfaces
+- dot1Q encapsulation
+- router on a stick
+- router subinterfaces
+- tagging / tagged frames 
+- access port versus trunk port 
+
+
+### SVI en loopback
+
+Cisco switch/packet tracer: 
+
+- je kan een SVI aanmaken (en ook meerdere) 
+- je kan een IP-adres toekennen aan een SVI 
+- je kan een default-gateway instellen in een switch 
+- je kan een SVI pingen vanaf een PC of router
+- je kan vanaf een PC or router pingen naar een SVI in een switch
+
+
+Kennis:
+
+
+- je weet dat beide SVI en loopback interface virtuele L3 interfaces zijn
+- je weet een SVI typisch in een switch bestaat,  terwijl een loopback interface in een router bestaat
+- je weet dat een SVI aan een VLAN gekoppeld is
+- je weet waarvoor het acroniem SVI staat
+- je begrijpt dat de basisfunctie van de switch/router niet verandert door er een SVI/loopback op in te stellen 
+- opdracht: wat dan met multi-layer switches (zie verder)? 
+kan daar een SVI gemaakt worden? 
+kan daar een loopback gemaakt worden? 
+- je begrijpt dat het Cisco commando "interface vlan" voor SVI configuratie is, en niet voor de VLAN zelf
+
+Het nut van SVI en loopback: zie ssh 
+ 
+
+
+
+### paswoorden / SSH
+
+TODO eerst zelf nog studeren... 
+(welke paswoorden zijn er ook alweer allemaal? basic password settings, line password, enable password? 
+password vs secret? ) 
+(is line password op console zelfde als basic password?? )
+
+https://media.defense.gov/2022/Feb/17/2002940795/-1/-1/1/CSI_CISCO_PASSWORD_TYPES_BEST_PRACTICES_20220217.PDF 
+
+
+TODO: ssh keys nog eens bekijken. 
+
+In packet tracer: 
+
+- je kan een ssh sessie opzetten vanaf een PC naar een switch (typsich met SVI IP adres)  
+- je kan een ssh sessie opzetten vanaf een PC naar een router (typisch met loopback IP adres)
+
+
+
+
+
+### OSPF (v2/v3)
+
+Vaardigheden: 
+
+- je kan OSPF (v2 en v3) configureren (single area voldoende)
+- je kan OSPFv2 configureren op twee manieren (globale network configuratie of per-interface configuratie)
+- je kan foutopsporing in routing doen, nu ook met OSPF
+- je kan op basis een topologie voorspellen welke netwerken door OSPF aan een routing tabel toegevoegd gaan worden
+- je kan een default route delen via OSPF
+- je kan een router configuren zodanig dat hij als DR of BDR geforceerd wordt in een bepaald BC domein (via priority) 
+- je kan een OSPF proces herstarten in een router
+- je kan OSPF neighbours van een router laten zien via CLI
+- je kan laten zien welk delen van een routing tabel door OSPF zijn toegevoegd
+
+
+Kennis: 
+
+- je begrijpt het principe van dynamische routering
+- je weet dat er verschillende protocollen bestaan voor dynamische routering en twee grote groepen
+- je kan kort omschrijven wat een link-state protocol is
+- je begrijpt dat OSPF een link-state protocol is 
+- je begrijpt het concept "administrative distance" (AD) bij routing
+- je begrijpt hoe OSPF netwerkadressen afleidt uit de configuratie (opgelet: interface IP adres speelt altijd een rol)
+- je weet wat "default-information originate" betekent, waarvoor dit dient 
+- je kan uitleggen wat het nut is van DR/BDR, en dus weet je dat er 1 DR/BDR is per BC domein (en bijgevolg kan een router DR zijn in één BC domein, maar geen DR zijn in een ander domein)
+- je begrijpt dat OSPF aanpassingen kan doen in de routing tabellen bij wijzigingen in het netwerk
+
+Wat je niet moet kennen/kunnen in verband met OSPF: 
+- je hoeft niet de soorten OSPF pakketjes uit het hoofd te kennen (maar je weet wel dat het begint met HELLO) 
+- je hoeft niet al de fases in het protocol te kennen (maar je weet wel dat het eindigt in 2-way state of FULL state) 
+- je hoeft niet uit het hoofd kunnen uitrekenen welke router de DR of BDR wordt, en die regels moet je zeker niet uit het hoofd kennen 
+
 
 ### STP
 
+Je bent klaar met deze stap wanneer je het volgende kent of kan: 
+je weet waar STP en Rapid STP voor staan
+je kan duidelijk uitleggen welk probleem er zou ontstaan zonder een STP
+je kan STP pakketjes zien in packet tracer simulatie mode, en de velden erin bekijken 
+je weet dat STP protocollen bepaalde poorten blokkeren voor gewoon netwerkverkeer (maar dat er nog steeds STP protocol pakketjes doorkomen) 
+je weet dat er verschillen zijn tussen STP en rapid STP, zowel in aantal poort-rollen, als in aantal poorttoestanden (zonder de details te kennen)
+je weet dat het resultaat van STP een boomstructuur is (tree), en kan die herkennen in een STP configuratie in packet tracer
+je kan de root bridge en zijn root poort terugvinden in een STP configuratie in packet tracer 
+je bent je ervan bewust dat een netwerkgebruiker in een bedrijf een switch zou kunnen verbinden via de ethernet-wandcontactdoos, en zo ook extra lussen kan creëren in een bedrijfsnetwerk zonder medeweten van de netwerkbeheerder
+
+
+Wat je niet moet kennen/kunnen: 
+je hoeft het STP algoritme niet in detail te kennen; dus je hoeft niet met de hand kunnen narekenen welke switch de root bridge wordt, of welke poorten blocked of designated zullen zijn (CCNA/Jeremy’s IT Lab gaat daar erg in detail) 
+je hoeft niet alle verschillen tussen STP en RSTP uit het hoofd kennen
+
+
 ### Linkaggregatie (Etherchannel)
+
+Etherchannel 
+Je bent klaar met deze stap wanneer je het volgende kent of kan: 
+je begrijpt het nut van linkaggreatie
+je begrijpt dat STP in werking komt als je gewoon twee switches met twee kabels verbindt, en dat dit niet is wat je wenst bij linkaggreatie
+je kan LACP configureren op Cisco switches, met twee maar ook met meer dan twee links 
+je weet dat er heel wat opties bestaan die je niet allemaal goed moet kennen, maar je kan wel foutopsporing doen in verband met verkeerde instellingen
+
+Wat je niet moet kennen/kunnen: 
+PAgP hoef je niet te kennen, LACP is voldoende
+je mag steeds active-active LACP config gebruiken, je hoeft niet alle combinaties die mogelijk zijn te kunnen gebruiken (je moet het wel kunnen terugvinden in de handleidingen indien nodig) 
+
 
 ### Access control lists
 
+Leer ACL's 
+Je bent klaar met deze stap wanneer je het volgende kent of kan: 
+standaard ACL’s configureren, met begrip van de vuistregels over de router interface en de richting voor een standaard ACL
+extended ACL’s configureren, met begrip van de vuistregels over de router interface en de richting voor een advanced ACL
+ACL’s met meerdere permit/deny kan je lezen (en begrijpen), en ook zelf schrijven op basis van de verreisten
+je begrijpt de impliciete laatste regel in een ACL
+je kan foutopsporing doen voor ACL’s 
+
+
+
 ### Design & Integratie, redundantie
+
+Nu oefen je op design en integratie. 
+Je bent klaar met deze stap wanneer je het volgende kent of kan: 
+alles configureren in grote oefeningen maken waarbij alle of bijna alle gezien leerstof in 1 topologie in packet tracer samenkomt
+op basis van verreisten van aantal eindgebruikers een gegeven IPv4 netwerk subnetten en toepassen in een ontwerp 
+op basis van verreisten van aantal afdelingen een netwerk uittekenen met VLAN’s, switches, een MLS, en routers, en toepassen in een ontwerp 
+FHRP: je weet wat het is, waarvoor het dient (HSRP op cisco), en dat het kadert in “redundantie” 
+HSRP: je begrijpt dat daar verschillende mogelijkheden zijn als een primaire terug online komt: gaat die primaire terug overnemen, of blijft de secundaire? (todo); je kan snel terugvinden hoe het bij HSRP werkt 
+
+
+backup routes (floating routes) ; bij redundnatie zien
+
+Niet kennen: 
+je hoeft geen HSRP configuratie te kunnen doen
