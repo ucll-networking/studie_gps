@@ -232,7 +232,7 @@ image::studie_gps_fig_switched_network.png[]
 
 Je bent klaar met deze stap wanneer je het volgende kent of kan:
 
-Talstelsels:
+Talstelsels (dit is in principe kennis uit OPO Computer Systems):
 
 - je kent binaire/decimale/hexadecimale voorstellingen van getallen,
     en kan omzettingen doen ; dat mag met een rekenmachine, maar je hebt
@@ -248,14 +248,14 @@ IPv4-adressen, basis
     decimaal getal
 - je weet dat een IPv4-adres een netwerkdeel en een hostdeel heeft
 - je kent volgende twee manieren om het netwerkdeel van een IPv4-adres
-    aan te geven: netwerkmasker notatie (bijvoorbeeld 255.0.0.0), en de "slash"
+    aan te geven: netwerkmasker notatie (bijvoorbeeld 255.0.0.0), en de "CIDR (slash)"
     notatie (bijvoorbeeld /8)
-- je kan een netwerkmasker converteren in een slash notatie en
+- je kan een netwerkmasker converteren in een CIDR notatie en
     omgekeerd
 - je begrijpt dat er twee speciale adressen zijn, niet geschikt voor
     het adres van een host: IPv4 **broadcastadres** en IPv4
     **netwerkadres**, en je kan beide adressen afleiden uit een gegeven
-    hostadres; je kent goed het onderscheid tussen een **hostadres** en
+    hostadres en netwerkmasker; je kent goed het onderscheid tussen een **hostadres** en
     een netwerkadres
 - je kent de betekenis van een "broadcast"
 - je kan nagaan of twee IPv4-adressen (met gegeven netwerkmasker) in
@@ -263,10 +263,11 @@ IPv4-adressen, basis
 - je kan voor een gegeven IPv4-netwerk uitrekenen hoeveel geldige hostadressen 
   erin zitten (en je kan ze desnoods allemaal oplijsten)
 - je kan zelf meerdere IPv4-netwerken bedenken die geen overlap hebben
+- je kan een IPv4-netwerkmasker voorstellen op basis van een gegeven aantal hosts in een netwerk (bijvoorbeeld: ik heb 50 hosts nodig, welk netwerkmasker moet ik dan gebruiken?)
 
 IPv4-adressen, types
 
-- je kent/herkent het verschil tussen publieke en "private" IPv4-adressen, je herkent 192.168.x.y als private, en ook 10.x.y.z ; je
+- je kent/herkent het verschil tussen publieke en "private" IPv4-adressen, je herkent 192.168.0.0/16 als private, 172.16.0.0/12 en ook 10.0.0.0/8 zoals bepaald in RFC1918; je
     weet dat er nog andere private ranges of speciale adressen bestaan,
     en kan ze opzoeken
 - je weet dat op het Internet private adressen niet gebruikt worden
@@ -321,15 +322,12 @@ Packet Tracer:
     gateway instellingen
 - je begrijpt dat routers net als eindapparaten gebruik maken van
     hostadressen (dus geen netwerkadres of zo)
-- je kan de IP configuratie van de interfaces van een Cisco router
+- je kan de IP-configuratie van de interfaces van een Cisco router
     opvragen via de CLI
 - je kan Packet Tracer configuraties met 1 router en meerdere IPv4
     netwerken troubleshooten
 - je kan via IOS CLI de **routing tabel** van een Cisco router laten
     zien
-- je hebt eens geprobeerd om twee interfaces van een router een IP
-    adres te geven binnen hetzelfde netwerk, en je ziet dat Cisco IOS
-    dit niet aanvaardt
 - je kan foutopsporing doen in configuraties met 1 router (PC
     configuratie, router interface configuratie)
 
