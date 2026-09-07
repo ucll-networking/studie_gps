@@ -8,138 +8,18 @@
 
 ## Inleiding
 
-### Doel
-Deze studie-GPS heeft als doel:
-
-- Een alternatieve volgorde aanbieden om de leerstof te     
-  studeren/herhalen (andere volgorde dan Jeremy's IT Labs, andere     volgorde dan Cisco NetAcad CCNA)
-- Checklists om je te helpen nagaan of je klaar bent met een onderdeel
-- Toelichten hoe gedetailleerd je een onderwerp moet kennen
-- Extra aandacht geven aan foutopsporing
-- Je aanmoedigen om soms bewust iets verkeerd te configureren en dan    
-  na te gaan of het effectief misloopt waar jij het verwacht
+OUD: bezig met deze tekst te transfereren naar cn_toledo project.
 
 ### Indeling
-Deze studie-GPS is ingedeeld in twee delen:
 
-- Eerst leer je voldoende om de werking van een typisch thuisnetwerk    
-  te begrijpen
-- Daarna leer je netwerktechnologie die je meestal niet in een     
-  thuisnetwerk tegenkomt, maar wel in het netwerk van een school of een bedrijf
-
-In deze cursus behandelen we geen draadloze netwerken. Hoewel draadloze netwerken overal voorkomen, blijft alles wat we leren relevant, ook voor netwerken met draadloze eindapparatuur.
-
-### Methode
-Deze studie-GPS geeft vooral een volgorde, en helpt jezelf te evalueren.
-Je moet wel zelf actief op zoek gaan in het cursusmateriaal om elk
-onderwerp goed te beheersen. Aan het einde van elke stap staat een
-lijstje van verwachte kennis en vaardigheden die je zou moeten bereiken
-in die stap.
-
-### Oproep voor feedback
-Deze studie-GPS is recent en nog in opbouw. Feedback over het nut ervan
-is zeer welkom. Vind je deze alternatieve volgorde nuttig, of geef je
-toch de voorkeur aan NetAcad of Jeremy's IT Labs? Wat vind je er goed
-aan? Wat vind je niet goed? Staan er fouten in? Ontbreekt er een stuk?
-Feedback is welkom bij je coach voor Computer Networks.
+In deze cursus behandelen we geen draadloze netwerken. 
+Hoewel draadloze netwerken overal voorkomen, blijft alles wat we leren relevant, ook voor netwerken met draadloze eindapparatuur.
 
 ### Tip
 Bewaar al je Packet Tracer oefeningen, vooral de oefeningen waar je zelf
 van een leeg blad begint te tekenen.
 
-
 ## Deel 1: Je netwerk thuis begrijpen
-
-### Voorbereiding (Packet Tracer/Wireshark)
-
-. zorg dat je toegang hebt tot Cisco NetAcad (zie Toledo)
-. installeer Cisco Packet Tracer op je computer (zie Toledo)
-. installeer Wireshark op je computer (zie Toledo)
-
-Zorg nu dat je in Packet Tracer een paar basisvaardigheden opdoet, als
-eerste kennismaking. Wat hierbij kan helpen:
-
-- Jeremy's "Packet Tracer Introduction | Day 1 Lab"
-  (https://www.youtube.com/watch?v=a1Im6GYaSno[https://www.youtube.com/watch?v=a1Im6GYaSno, window=_blank])
-- NetAcad CCNA-1 submodule 2.3.7 Packet Tracer - Navigate the IOS
-- experimenteer zelf wat, teken eens een netwerk vertrekkende van een
-  leeg blad in Packet Tracer, kijk wat rond in Packet Tracer
-
-Zorg daarna dat je in Wireshark een "capture" kan doen van het
-netwerkverkeer op je computer:
-
-- open wireshark, en selecteer de interface waarmee je op het internet
-    geconnecteerd bent
-- laat een aantal pakketten binnenkomen in Wireshark, en stop dan
-    (rode stopknop)
-- je klikt op een paar pakketten, en je kijkt alvast eens naar de
-    informatie die je erin vindt; zie je ergens TCP (Transmission Control
-    Protocol) staan? zie je andere protocolnamen?
-
-Als laatste zoek je uit hoe je het IPv4-adres van je computer kan
-terugvinden via CLI, en je probeert dit uit. Hieronder alvast de
-commando's die je waarschijnlijk nodig hebt:
-
-- Windows: $ ipconfig
-- Mac Terminal: $ ifconfig
-- Linux terminal: $ ip address
-
-Je bent klaar met deze stap wanneer je het volgende kent of kan:
-
-. in Packet Tracer:
-    - in een lege Packet Tracer een aantal switches, routers en PC's
-        tekenen en verbinden (met automatische connectie-kabel), en ook
-        terug verwijderen ; ook al begrijp je nog niet wat deze
-        apparaten doen, je zou wel een gegeven topologie kunnen nabouwen
-        in Packet Tracer (doe dit eventueel eens; neem een
-        voorbeeldexamen en bouw het na)
-    - "options/preferences" gebruiken om de labels van interfaces of
-        apparaatnamen aan- en uit te zetten
-    - bestanden (.pkt) opslaan en opnieuw openen
-    - labobestanden van Jeremy's IT Lab en Cisco NetAcad openen
-    - de CLI (command line interface) van een switch en router openen
-        om toegang te krijgen tot IOS
-
-. in Cisco IOS:
-
-    - ken je een aantal verschillende modes, en herken je hun
-        verschillende prompts (o.a. privileged exec mode, global config
-        mode)
-    - je begrijpt dat verschillende modes toegang geven tot
-        verschillende commando's
-    - je kent de CLI hulpmiddelen ? en TAB om mogelijke commando's te
-        zien of aan te vullen
-    - je kent de commando's "enable", "configure terminal", en
-        "exit" om tussen de modes te navigeren in IOS
-    - je weet dat je commando's kunt afkorten als de afkorting
-        eenduidig is (bijvoorbeeld \# conf t), en je kan zo typwerk besparen
-
-. in wireshark:
-
-    - je kan een dump maken van het netwerkverkeer op je
-        computer/laptop
-    - zie je de verschillende pakketjes (lijn per lijn), met een
-        timestamp, en kan je de details van elk pakketje bekijken
-    - je weet dat de informatie in de pakketjes digitaal wordt
-        voorgesteld, dus ook de nuttige inhoud (video, document, \...)
-        is digitaal
-    - je kent de term "packet switched network", en hebt deze
-        "packets" in wireshark gezien
-
-. op je computer:
-    - je weet dat er meestal meerdere netwerkinterfaces op je computer
-        zijn
-    - je begrijpt dat elke netwerkinterface zijn eigen IP-adres heeft
-        (of meerdere per interface)
-    - zonder de details te begrijpen, weet je dat IPv6 een recentere
-        variant is van het IP protocol dan IPv4, en dat momenteel heel
-        veel netwerken beide versies tegelijk ondersteunen
-    - je weet welke netwerk interface op jouw computer diegene is
-        waarlangs je met het Internet communiceert
-    - je weet via welk IPv4-adres je met het internet communiceert
-    - je vindt ook het IPv6-adres terug van deze netwerkinterface (als
-        je dat hebt)
-
 
 ### Eén IPv4-netwerk
 
