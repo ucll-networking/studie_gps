@@ -25,49 +25,6 @@ van een leeg blad begint te tekenen.
 
 Je bent klaar met deze stap wanneer je het volgende kent of kan:
 
-Packet Tracer bouwen/configureren:
-
-- je kan in Packet Tracer een netwerk bouwen met switches, ethernet
-    kabels, en "end devices" (PC / laptop / server) ; bijvoorbeeld zoals
-    in de schermafbeelding hieronder, maar je kan dit voor eender welke
-    combinatie van switches en eindapparaten
-- je kan in zo'n netwerk het IPv4-adres configureren van alle end
-    devices (bijvoorbeeld adressen 192.168.10.1, 192.168.10.2, \... met masker
-    255.255.255.0)
-- je herkent de prefixen Eth/Fa/Gi voor benamingen van interfaces in
-    Cisco apparatuur, en kent hun maximale bitrates
-- je weet dat er straight-through en crossover kabels bestaan, ook in
-    Packet Tracer simulatie; je weet dat dit in moderne apparatuur
-    automatisch wordt gedetecteerd en geen belangrijke rol meer speelt
-    in de praktijk
-- je weet misschien nog niet hoe een switch juist werkt, maar je merkt
-    al dat je een switch niet hoeft te configureren om hem in je netwerk
-    te laten werken
-- je kan in een switch CLI de interface status bekijken (connected of
-    niet); hangt er een kabel aan een interface of niet?
-- je kan in een switch CLI een interface in shutdown zetten, en terug
-    aanzetten
-- je kan in een switch CLI met een interface range ineens meerdere
-    interfaces in shutdown zetten
-
-Packet Tracer ping:
-
-- je kan vanop elk type eindapparaat (laptop, computer, server) een
-    ping verzenden via de computer CLI (hint: Desktop / Command prompt)
-- je kan aantonen of end devices elkaar al dan niet kunnen **pingen**
-    ; dus je herkent een geslaagde ping versus een gefaalde ping
-- je hebt al eens bewust een switch interface in shutdown gezet, en
-    dan gezien dat het apparaat achter die interface niet meer
-    bereikbaar is
-- je hebt al eens bewust een ping laten falen door een eindapparaat
-    met een compleet ander IPv4-adres te configureren (bijvoorbeeld 10.10.10.10
-    met mask 255.255.0.0 terwijl alle andere apparaten 192.168.10.x als
-    IP-adres hebben)
-- je begrijpt dat een IPv4-adres uniek moet zijn binnen het netwerk,
-    dus als er twee eindapparaten hetzelfde IPv4-adres hebben, dan gaat
-    het ergens mis (probeer dit gerust eens; wat gebeurt er? misschien
-    begrijpt je verder in de cursus pas wat er exact misloopt\...)
-
 Kennis:
 
 - je (her)kent een UTP Ethernet kabel (copper in Packet Tracer)
@@ -159,13 +116,6 @@ IPv4-adressen, types
 - je weet dat er behalve IPv4 unicast en broadcast, ook nog multicast
     bestaat, en snapt in grote lijnen waarvoor dit dient
 
-Packet Tracer:
-
-- je kan in Packet Tracer aantonen dat een PC met IPv4 192.168.10.1/24
-    en een PC met IPv4 192.168.11.1/24 niet met elkaar kunnen
-    communiceren als er alleen switches en kabels gebruikt worden; en je
-    snapt dat dit is omdat ze niet in hetzelfde IPv4-netwerk zitten
-
 Eigen computer:
 
 - je kan het IPv4-adres van je eigen laptop vinden
@@ -181,37 +131,6 @@ zaten. In deze stap zien we hoe apparaten in verschillende IPv4
 netwerken met elkaar kunnen communiceren door een router toe te voegen.
 
 Je bent klaar met deze stap wanneer je het volgende kent of kan:
-
-Packet Tracer:
-
-- je kan twee netwerken zoals gezien/geoefend in de vorige stap aan
-    elkaar koppelen met 1 router
-- je kan een IPv4 (host)adres toekennen aan een router interface
-- je ondervindt dat router interfaces zonder configuratie in shutdown
-    staan, en je ze dus expliciet moet aanzetten (in tegenstelling tot
-    switch interfaces)
-- je begrijpt dat de **default gateway** instelling in een
-    eindapparaat nodig is vooraleer die buiten zijn eigen netwerk
-    (m.a.w. voorbij de router) kan communiceren
-- je kan nu twee willekeurige netwerken met 1 router ertussen
-    configureren zodanig dat alle apparaten elkaar kunnen pingen (router
-    configureren en eindapparaten configureren)
-- je begrijpt dat je de router interface een willekeurig IPv4-adres in
-    je netwerk kan geven, zolang die maar overeenkomt met de default
-    gateway instellingen
-- je begrijpt dat routers net als eindapparaten gebruik maken van
-    hostadressen (dus geen netwerkadres of zo)
-- je kan de IP configuratie van de interfaces van een Cisco router
-    opvragen via de CLI
-- je kan Packet Tracer configuraties met 1 router en meerdere IPv4
-    netwerken troubleshooten
-- je kan via IOS CLI de **routing tabel** van een Cisco router laten
-    zien
-- je hebt eens geprobeerd om twee interfaces van een router een IP
-    adres te geven binnen hetzelfde netwerk, en je ziet dat Cisco IOS
-    dit niet aanvaardt
-- je kan foutopsporing doen in configuraties met 1 router (PC
-    configuratie, router interface configuratie)
 
 Kennis:
 
@@ -246,36 +165,6 @@ image::studie_gps_fig_twee_routers.png[]
 ### Drie (of meer) IPv4-netwerken / statische routering
 
 Je bent klaar met deze stap wanneer je het volgende kent of kan:
-
-Packet Tracer:
-
-- je kan statische routes toevoegen aan een routing tabel van een
-    router
-- hiermee kan je dus voorgaande figuur met drie netwerken en twee
-    routers configureren zodanig dat alle hosts elkaar kunnen pingen
-- je kan statische routering troubleshooten
-- je kan nu willekeurig grote computernetwerken bouwen met vele
-    routers en switches, en zorgen dat iedereen met iedereen kan
-    communiceren door statische routes toe te voegen
-- je kan een IPv4 default route toevoegen aan een Cisco router
-- je weet dat Cisco switches en routers soms **uitbreidingsslots**
-    hebben, en je kan in Packet Tracer extra interfaces toevoegen aan
-    een switch of router; op die manier kan je extra Ethernet interfaces
-    toevoegen, voor zowel copper of fiber, zowel SFP als andere
-- je kan in Packet Tracer Cisco netwerkapparaten verbinden met andere
-    types kabel dan Ethernet koper, zoals **seriële kabels** en
-    **glasvezelkabels**
-- je kan nu ook een configuratie bouwen in Packet Tracer met 1 router
-    en 3 of 4 netwerken aan die ene router (gebruik bijvoorbeeld router PT-empty
-    in Packet Tracer, en de uitbreidingsslots)
-- je kan het IPv4-adres van router interfaces pingen vanaf
-    eindapparaten, en je begrijpt dat je op deze manier ook kan nagaan
-    tot waar in het netwerk de routering werkt of vanaf waar routering
-    niet meer werkt
-- je kan ook een ping versturen vanaf een router CLI naar eender welk
-    ander IP-adres
-- je kan floating static routes configureren en kan ze activeren/deactiveren door iets in het netwerk te veranderen 
-
 
 Kennis:
 
@@ -340,10 +229,6 @@ Je bent klaar met deze stap wanneer je het volgende kent of kan:
     dat dit ook niet nodig is omdat zo'n verbinding maar tussen twee
     apparaten is (er bestaan dan ook geen switches voor seriële
     verbindingen)
-- je kan het MAC-adres van een PC terugvinden in Packet Tracer, maar
-    ook dat van je eigen (echte) PC
-- je kan het MAC-adres van een router interface terugvinden in Cisco
-    IOS via de command line
 - je weet dat er op de datalinklaag behalve unicast adressen ook een
     broadcast adres is, en er ook multicast adressen bestaan
 - je weet dat er nog hogere protocollagen zijn (L4, \...), hierover
@@ -356,33 +241,21 @@ Je bent klaar met deze stap wanneer je het volgende kent of kan:
 
 Je bent klaar met deze stap wanneer je het volgende kent of kan:
 
-ARP en PT simulatie:
+ARP:
 
 - je kent bedoeling van ARP; samengevat: hier is een IP-adres, wie
     heeft dit adres en wat is jouw MAC-adres?
-- je kan ARP frames laten zien in Packet Tracer simulatie
-- je kan in Packet Tracer ook frames van andere protocollen zien (DTP,
-    CDP, STP, \...)
-- je kan in Packet Tracer filteren op protocol, en zo bijvoorbeeld
-    alleen ARP en ICMP laten zien in de simulator; later gebruik je deze
-    filters ook om andere protocollen te bekijken bij foutopsporing of
-    gewoon om iets bij te leren
-- je kan PC ARP-tabel wissen om een nieuwe ARP te forceren
 - je weet dat een ARP request om een onbekend MAC-adres te vinden, een
     L2 broadcast pakket is
 - je weet dat ook een router een ARP request zal sturen als hij een
     destination IP heeft maar het destination MAC nog niet kent
     (simuleer dit ook eens)
 
-ICMP en PT simulatie:
+ICMP:
 
 - je weet dat een ping eigenlijk pakketjes stuurt volgens het ICMP
     protocol, en dat dit echo request en echo replies zijn die dan heen
     en weer gestuurd worden
-- je kan in Packet Tracer simulatie mode een ICMP echo request of
-    reply bekijken, en zowel source/destination MAC-adres als
-    source/destination IP-adres terugvinden; je vindt ook terug of een
-    pakketje een request dan wel een reply is
 
 **Tip in Packet Tracer**: gebruik de fast forward knop (dubbel pijl
 naast de reset knop) om de simulatie te versnellen; dit is onder andere
@@ -403,15 +276,6 @@ Je bent klaar met deze stap wanneer je het volgende kent of kan:
     welke twee kolommen er in een mac tabel zitten
 - je weet dat een switch dynamisch leert welke MAC-adressen achter
     welke interface zitten
-- je kan een switch MAC-tabel wissen, en je weet wat het gevolg
-    hiervan is
-- je kan in Packet Tracer volgende scenario's uitlokken en bekijken in
-    simulatie: (1) een switch stuurt een broadcast frame door naar alle
-    interfaces, (2) een switch stuurt een unicast frame door naar alle
-    interfaces, (3) een switch stuurt een unicast frame door naar 1
-    interface (je zorgt er uiteraard voor dat je een switch hebt waar
-    genoeg interfaces in gebruik zijn)
-- je kan de huidige MAC-tabel van een switch laten zien
 - je snapt dat een L2 broadcast door een switch uiteraard wel naar
     alle interfaces wordt doorgestuurd
 - je weet dat switchen (in principe) zelf geen MAC-adres hebben
@@ -496,24 +360,6 @@ Kennis IPv6:
     protocol is; je ziet dus dat een gelijkaardig functie (namelijk het
     vinden van het MAC-adres van een host waarvan je het IP-adres kent)
     bij IPv6 in een hogere protocollaag zit dan bij IPv4
-
-Packet Tracer met IPv6:
-
-- je weet dat IPv6 in een router eerst moet aangezet worden
-- je kan alle IPv4 Packet Tracer configuratie-oefeningen nu ook met
-    IPv6 maken:
-    * hosts configureren (met LLA en GUA)
-    * router interfaces configureren (best ook met LLA en GUA)
-    * statische routes toevoegen aan routers (alleen GUA)
-- (tip: neem al je gemaakte en bewaarde IPv4 oefeningen, en voeg er
-    IPv6 aan toe)
-- je kan pingen met IPv6-adressen, host naar host, of host naar router
-    interface
-- je gebruikt ook eens een LLA op de routers/gateway met waarde +fe80::+ en 
-  je test uit dat je elke router interface hetzelfde LLA adres +fe80::+ kan geven 
-  omdat het LLA alleen binnen het L2 broadcast domein    uniek moet zijn
-- je kan NS en NA berichten zien in Packet Tracer waarbij een host het 
-    MAC-adres vraagt van een IPv6 host in zijn broadcast domein 
 
 Eigen computer:
 
@@ -604,18 +450,6 @@ Kennis:
     relay
 - je weet dat communicatie tussen DHCP-relay en DHCP-server unicast is
 
-Packet Tracer:
-
-- je kan een DHCP-server configureren op een Cisco router
-- je kan hosts configureren om DHCP client te zijn
-- je kan ook een Cisco router interface configuren om DHCP client te
-    zijn
-- je kan een DHCP-relay opzetten
-- je kan DNS informatie en domeinnaam meegeven bij de DHCP
-    configuratie
-- je kan een PC in Packet Tracer het DHCP proces laten (her)starten,
-    je kent release en renew opties in de ipconfig command prompt
-
 Eigen computer:
 
 - heb je al eens een DHCP release/renew gedaan op je eigen computer?
@@ -638,13 +472,9 @@ Je bent klaar met deze stap wanneer je het volgende kent of kan:
     configureren: (1) SLAAC only, (2) SLAAC met stateless DHCP, en (3)
     DHCPv6
 - je kan de verschillen tussen deze 3 methodes uitleggen
-- je kan deze drie methodes uitvoeren in een router in Cisco packet
-    tracer
 - je weet dat onderliggend de Network Discovery (ND of NDP) pakketten
     van type Router Advertisement (RA) en Router Solicitation (RS) een
     rol spelen bij SLAAC/DHCPv6
-- je kan deze drie methodes van dynamische IPv6 configuratie
-    troubleshooten
 
 Wat je niet moet kennen/kunnen voor deze stap:
 
@@ -681,13 +511,6 @@ Kennis:
 - je snapt dat een ping door dynamische NAT maar in één richting kan
     gestart worden, terwijl er uiteindelijk toch in twee richtingen
     (request/reply) pakketten doorkomen
-
-Packet Tracer:
-
-- je kan NAT configureren op een Cisco router, zowel statisch als
-    dynamisch, en voor dynamisch zowel met als zonder overload
-- je kan via simulatie in Packet Tracer aantonen dat NAT zijn werk
-    juist doet
 
 Life of a packet:
 
@@ -752,7 +575,6 @@ Wat er typisch in een home-router zit, is een combinatie van:
 
 - je begrijpt dat een MLS de functies van een swich en een router combineert in 1 toestel 
 - je begrijpt het onderscheid tussen een switched port en een routed port in een MLS 
-- je kan alle configuraties die je een L2 switch of een router moeten kunnen, ook op een MLS toepassen
 
 Denk eens na over volgende vraag: 
 Bij "gewone" switches en routers kan je het aantal IP netwerken gemakkelijk tellen 
@@ -774,11 +596,6 @@ Denk dan eens goed na wat er zou moeten gebeuren als zo'n trunk kabel aan een ro
 nog steeds met de analogie van een bundel virtuele kabels die allemaal bij die router aankomen. 
 Hoe verwacht je dat dit werkt? 
 
-Vaardigheden: 
-
-- je kan VLAN's en VLAN trunks configureren op switches, routers en MLS 
-- je kan aantonen in een simulatie dat een VLAN effectief doet wat het moet doen (denk aan L2 broadcast, denk aan switch unicast flooding)
-
 
 Kennis: je kan volgende VLAN gerelateerde concepten uitleggen  
 
@@ -793,14 +610,6 @@ Kennis: je kan volgende VLAN gerelateerde concepten uitleggen
 
 
 ### SVI en loopback
-
-Cisco switch/packet tracer: 
-
-- je kan een SVI aanmaken (en ook meerdere) 
-- je kan een IP-adres toekennen aan een SVI 
-- je kan een default-gateway instellen in een switch 
-- je kan een SVI pingen vanaf een PC of router
-- je kan vanaf een PC or router pingen naar een SVI in een switch
 
 
 Kennis:
@@ -833,28 +642,12 @@ https://media.defense.gov/2022/Feb/17/2002940795/-1/-1/1/CSI_CISCO_PASSWORD_TYPE
 
 TODO: ssh keys nog eens bekijken. 
 
-In packet tracer: 
-
-- je kan een ssh sessie opzetten vanaf een PC naar een switch (typsich met SVI IP adres)  
-- je kan een ssh sessie opzetten vanaf een PC naar een router (typisch met loopback IP adres)
 
 
 
 
 
 ### OSPF (v2/v3)
-
-Vaardigheden: 
-
-- je kan OSPF (v2 en v3) configureren (single area voldoende)
-- je kan OSPFv2 configureren op twee manieren (globale network configuratie of per-interface configuratie)
-- je kan foutopsporing in routing doen, nu ook met OSPF
-- je kan op basis een topologie voorspellen welke netwerken door OSPF aan een routing tabel toegevoegd gaan worden
-- je kan een default route delen via OSPF
-- je kan een router configuren zodanig dat hij als DR of BDR geforceerd wordt in een bepaald BC domein (via priority) 
-- je kan een OSPF proces herstarten in een router
-- je kan OSPF neighbours van een router laten zien via CLI
-- je kan laten zien welk delen van een routing tabel door OSPF zijn toegevoegd
 
 
 Kennis: 
@@ -880,11 +673,9 @@ Wat je niet moet kennen/kunnen in verband met OSPF:
 Je bent klaar met deze stap wanneer je het volgende kent of kan: 
 je weet waar STP en Rapid STP voor staan
 je kan duidelijk uitleggen welk probleem er zou ontstaan zonder een STP
-je kan STP pakketjes zien in packet tracer simulatie mode, en de velden erin bekijken 
 je weet dat STP protocollen bepaalde poorten blokkeren voor gewoon netwerkverkeer (maar dat er nog steeds STP protocol pakketjes doorkomen) 
 je weet dat er verschillen zijn tussen STP en rapid STP, zowel in aantal poort-rollen, als in aantal poorttoestanden (zonder de details te kennen)
 je weet dat het resultaat van STP een boomstructuur is (tree), en kan die herkennen in een STP configuratie in packet tracer
-je kan de root bridge en zijn root poort terugvinden in een STP configuratie in packet tracer 
 je bent je ervan bewust dat een netwerkgebruiker in een bedrijf een switch zou kunnen verbinden via de ethernet-wandcontactdoos, en zo ook extra lussen kan creëren in een bedrijfsnetwerk zonder medeweten van de netwerkbeheerder
 
 
@@ -899,8 +690,6 @@ Etherchannel
 Je bent klaar met deze stap wanneer je het volgende kent of kan: 
 je begrijpt het nut van linkaggreatie
 je begrijpt dat STP in werking komt als je gewoon twee switches met twee kabels verbindt, en dat dit niet is wat je wenst bij linkaggreatie
-je kan LACP configureren op Cisco switches, met twee maar ook met meer dan twee links 
-je weet dat er heel wat opties bestaan die je niet allemaal goed moet kennen, maar je kan wel foutopsporing doen in verband met verkeerde instellingen
 
 Wat je niet moet kennen/kunnen: 
 PAgP hoef je niet te kennen, LACP is voldoende
@@ -911,11 +700,8 @@ je mag steeds active-active LACP config gebruiken, je hoeft niet alle combinatie
 
 Leer ACL's 
 Je bent klaar met deze stap wanneer je het volgende kent of kan: 
-standaard ACL’s configureren, met begrip van de vuistregels over de router interface en de richting voor een standaard ACL
-extended ACL’s configureren, met begrip van de vuistregels over de router interface en de richting voor een advanced ACL
 ACL’s met meerdere permit/deny kan je lezen (en begrijpen), en ook zelf schrijven op basis van de verreisten
 je begrijpt de impliciete laatste regel in een ACL
-je kan foutopsporing doen voor ACL’s 
 
 
 
@@ -923,9 +709,6 @@ je kan foutopsporing doen voor ACL’s
 
 Nu oefen je op design en integratie. 
 Je bent klaar met deze stap wanneer je het volgende kent of kan: 
-alles configureren in grote oefeningen maken waarbij alle of bijna alle gezien leerstof in 1 topologie in packet tracer samenkomt
-op basis van verreisten van aantal eindgebruikers een gegeven IPv4 netwerk subnetten en toepassen in een ontwerp 
-op basis van verreisten van aantal afdelingen een netwerk uittekenen met VLAN’s, switches, een MLS, en routers, en toepassen in een ontwerp 
 FHRP: je weet wat het is, waarvoor het dient (HSRP op cisco), en dat het kadert in “redundantie” 
 HSRP: je begrijpt dat daar verschillende mogelijkheden zijn als een primaire terug online komt: gaat die primaire terug overnemen, of blijft de secundaire? (todo); je kan snel terugvinden hoe het bij HSRP werkt 
 
